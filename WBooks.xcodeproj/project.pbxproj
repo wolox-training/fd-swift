@@ -38,8 +38,8 @@
 		D47646B722E8B39200BF86EE /* InitialScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47646B622E8B39200BF86EE /* InitialScreenController.swift */; };
 		D47646BA22E8F73900BF86EE /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47646B922E8F73900BF86EE /* BookCell.swift */; };
 		D47646BC22E8F7DE00BF86EE /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47646BB22E8F7DE00BF86EE /* BookCell.xib */; };
-		D4E618E822EA3BC000482654 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E618E722EA3BC000482654 /* TableView.swift */; };
-		D4E618F022EA3DA700482654 /* TableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E618EF22EA3DA700482654 /* TableView.xib */; };
+		D4E618E822EA3BC000482654 /* BooksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E618E722EA3BC000482654 /* BooksTableView.swift */; };
+		D4E618F022EA3DA700482654 /* BooksTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E618EF22EA3DA700482654 /* BooksTableView.xib */; };
 		E1530D991ED378F2002A9002 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1530D981ED378F2002A9002 /* Rollbar.framework */; };
 		E1530D9C1ED37905002A9002 /* RollbarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1530D9B1ED37905002A9002 /* RollbarService.swift */; };
 		E1530D9E1ED382EA002A9002 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1530D9D1ED382EA002A9002 /* SystemConfiguration.framework */; };
@@ -116,8 +116,8 @@
 		D47646B622E8B39200BF86EE /* InitialScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenController.swift; sourceTree = "<group>"; };
 		D47646B922E8F73900BF86EE /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		D47646BB22E8F7DE00BF86EE /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
-		D4E618E722EA3BC000482654 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		D4E618EF22EA3DA700482654 /* TableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableView.xib; sourceTree = "<group>"; };
+		D4E618E722EA3BC000482654 /* BooksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableView.swift; sourceTree = "<group>"; };
+		D4E618EF22EA3DA700482654 /* BooksTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksTableView.xib; sourceTree = "<group>"; };
 		E12DE1621F772A370072C2FF /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		E1530D981ED378F2002A9002 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = Carthage/Build/iOS/Rollbar.framework; sourceTree = "<group>"; };
 		E1530D9B1ED37905002A9002 /* RollbarService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollbarService.swift; path = Services/RollbarService.swift; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				D474B2A722EA206F00586249 /* BookLibraryController.swift */,
-				D4E618E722EA3BC000482654 /* TableView.swift */,
-				D4E618EF22EA3DA700482654 /* TableView.xib */,
+				D4E618E722EA3BC000482654 /* BooksTableView.swift */,
+				D4E618EF22EA3DA700482654 /* BooksTableView.xib */,
 				D47646B922E8F73900BF86EE /* BookCell.swift */,
 				D47646BB22E8F7DE00BF86EE /* BookCell.xib */,
 				D474B2A322EA1E2600586249 /* Book.swift */,
@@ -405,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47646B522E8B29500BF86EE /* InitialScreenView.xib in Resources */,
-				D4E618F022EA3DA700482654 /* TableView.xib in Resources */,
+				D4E618F022EA3DA700482654 /* BooksTableView.xib in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
 				D47646BC22E8F7DE00BF86EE /* BookCell.xib in Resources */,
 			);
@@ -486,7 +486,7 @@
 				D474B2A822EA206F00586249 /* BookLibraryController.swift in Sources */,
 				E1530D9C1ED37905002A9002 /* RollbarService.swift in Sources */,
 				D47646B322E8B27900BF86EE /* InitalScreenView.swift in Sources */,
-				D4E618E822EA3BC000482654 /* TableView.swift in Sources */,
+				D4E618E822EA3BC000482654 /* BooksTableView.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
