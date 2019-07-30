@@ -12,9 +12,9 @@ import WolmoCore
 class BooksTableView: UITableViewCell, NibLoadable {
     
     @IBOutlet weak var table: UITableView! {
-    didSet {
-    table.backgroundColor = .backgroundLightBlue()
-    table.separatorStyle = .none
+        didSet {
+            table.backgroundColor = .backgroundLightBlue()
+            table.separatorStyle = .none
         }
     }
 
