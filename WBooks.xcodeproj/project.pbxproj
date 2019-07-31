@@ -30,16 +30,32 @@
 		B83388D921E93AAC00085E26 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83388D121E93AAC00085E26 /* Runes.framework */; };
 		CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB934DC1D21992100DF75C2 /* Environment.swift */; };
 		CED934891E8466A60017CF96 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED934871E8466A60017CF96 /* ReactiveSwift.framework */; };
-		D474B2A422EA1E2600586249 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474B2A322EA1E2600586249 /* Book.swift */; };
-		D474B2A622EA1F6800586249 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474B2A522EA1F6800586249 /* BookInfo.swift */; };
-		D474B2A822EA206F00586249 /* BookLibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474B2A722EA206F00586249 /* BookLibraryController.swift */; };
+		D46C8D6022F1D176009F50DC /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D5F22F1D176009F50DC /* NavBarController.swift */; };
+		D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D6122F1D50B009F50DC /* TabBarController.swift */; };
+		D46C8DA022F20683009F50DC /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D8E22F20683009F50DC /* AddNewController.swift */; };
+		D46C8DA122F20683009F50DC /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D8F22F20683009F50DC /* AddNewView.swift */; };
+		D46C8DA222F20683009F50DC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9022F20683009F50DC /* Book.swift */; };
+		D46C8DA322F20683009F50DC /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9122F20683009F50DC /* BookCell.swift */; };
+		D46C8DA422F20683009F50DC /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8D9222F20683009F50DC /* BookCell.xib */; };
+		D46C8DA522F20683009F50DC /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9322F20683009F50DC /* BookInfo.swift */; };
+		D46C8DA622F20683009F50DC /* BookLibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9422F20683009F50DC /* BookLibraryController.swift */; };
+		D46C8DA722F20683009F50DC /* BooksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9522F20683009F50DC /* BooksTableView.swift */; };
+		D46C8DA822F20683009F50DC /* BooksTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8D9622F20683009F50DC /* BooksTableView.xib */; };
+		D46C8DA922F20683009F50DC /* RentalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9822F20683009F50DC /* RentalsController.swift */; };
+		D46C8DAA22F20683009F50DC /* RentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9922F20683009F50DC /* RentalsView.swift */; };
+		D46C8DAB22F20683009F50DC /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9B22F20683009F50DC /* SettingsController.swift */; };
+		D46C8DAC22F20683009F50DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9C22F20683009F50DC /* SettingsView.swift */; };
+		D46C8DAD22F20683009F50DC /* WishlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9E22F20683009F50DC /* WishlistController.swift */; };
+		D46C8DAE22F20683009F50DC /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9F22F20683009F50DC /* WishlistView.swift */; };
+		D46C8DB022F2074C009F50DC /* AddNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DAF22F2074C009F50DC /* AddNewView.xib */; };
+		D46C8DB222F2076C009F50DC /* RentalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB122F2076C009F50DC /* RentalsView.xib */; };
+		D46C8DB422F2077D009F50DC /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB322F2077D009F50DC /* SettingsView.xib */; };
+		D46C8DB622F207B7009F50DC /* WishlistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB522F207B7009F50DC /* WishlistView.xib */; };
+		D46C8DBA22F21968009F50DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DBC22F21968009F50DC /* Localizable.strings */; };
 		D47646B322E8B27900BF86EE /* InitalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47646B222E8B27900BF86EE /* InitalScreenView.swift */; };
 		D47646B522E8B29500BF86EE /* InitialScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47646B422E8B29500BF86EE /* InitialScreenView.xib */; };
 		D47646B722E8B39200BF86EE /* InitialScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47646B622E8B39200BF86EE /* InitialScreenController.swift */; };
-		D47646BA22E8F73900BF86EE /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47646B922E8F73900BF86EE /* BookCell.swift */; };
-		D47646BC22E8F7DE00BF86EE /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47646BB22E8F7DE00BF86EE /* BookCell.xib */; };
-		D4E618E822EA3BC000482654 /* BooksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E618E722EA3BC000482654 /* BooksTableView.swift */; };
-		D4E618F022EA3DA700482654 /* BooksTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E618EF22EA3DA700482654 /* BooksTableView.xib */; };
+		D476750D22F0C7A10097D8B9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476750C22F0C7A10097D8B9 /* UIColorExtension.swift */; };
 		E1530D991ED378F2002A9002 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1530D981ED378F2002A9002 /* Rollbar.framework */; };
 		E1530D9C1ED37905002A9002 /* RollbarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1530D9B1ED37905002A9002 /* RollbarService.swift */; };
 		E1530D9E1ED382EA002A9002 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1530D9D1ED382EA002A9002 /* SystemConfiguration.framework */; };
@@ -108,16 +124,33 @@
 		CED934861E8466A60017CF96 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = Carthage/Build/iOS/Core.framework; sourceTree = "<group>"; };
 		CED934871E8466A60017CF96 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CED9348A1E8466CE0017CF96 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
-		D474B2A322EA1E2600586249 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		D474B2A522EA1F6800586249 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
-		D474B2A722EA206F00586249 /* BookLibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLibraryController.swift; sourceTree = "<group>"; };
+		D46C8D5F22F1D176009F50DC /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
+		D46C8D6122F1D50B009F50DC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D46C8D8E22F20683009F50DC /* AddNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
+		D46C8D8F22F20683009F50DC /* AddNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		D46C8D9022F20683009F50DC /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		D46C8D9122F20683009F50DC /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		D46C8D9222F20683009F50DC /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
+		D46C8D9322F20683009F50DC /* BookInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
+		D46C8D9422F20683009F50DC /* BookLibraryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryController.swift; sourceTree = "<group>"; };
+		D46C8D9522F20683009F50DC /* BooksTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTableView.swift; sourceTree = "<group>"; };
+		D46C8D9622F20683009F50DC /* BooksTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BooksTableView.xib; sourceTree = "<group>"; };
+		D46C8D9822F20683009F50DC /* RentalsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsController.swift; sourceTree = "<group>"; };
+		D46C8D9922F20683009F50DC /* RentalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsView.swift; sourceTree = "<group>"; };
+		D46C8D9B22F20683009F50DC /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		D46C8D9C22F20683009F50DC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D46C8D9E22F20683009F50DC /* WishlistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistController.swift; sourceTree = "<group>"; };
+		D46C8D9F22F20683009F50DC /* WishlistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		D46C8DAF22F2074C009F50DC /* AddNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewView.xib; sourceTree = "<group>"; };
+		D46C8DB122F2076C009F50DC /* RentalsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalsView.xib; sourceTree = "<group>"; };
+		D46C8DB322F2077D009F50DC /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		D46C8DB522F207B7009F50DC /* WishlistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistView.xib; sourceTree = "<group>"; };
+		D46C8DBB22F21968009F50DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D46C8DBD22F21B4B009F50DC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D47646B222E8B27900BF86EE /* InitalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalScreenView.swift; sourceTree = "<group>"; };
 		D47646B422E8B29500BF86EE /* InitialScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialScreenView.xib; sourceTree = "<group>"; };
 		D47646B622E8B39200BF86EE /* InitialScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenController.swift; sourceTree = "<group>"; };
-		D47646B922E8F73900BF86EE /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
-		D47646BB22E8F7DE00BF86EE /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
-		D4E618E722EA3BC000482654 /* BooksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableView.swift; sourceTree = "<group>"; };
-		D4E618EF22EA3DA700482654 /* BooksTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksTableView.xib; sourceTree = "<group>"; };
+		D476750C22F0C7A10097D8B9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E12DE1621F772A370072C2FF /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		E1530D981ED378F2002A9002 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = Carthage/Build/iOS/Rollbar.framework; sourceTree = "<group>"; };
 		E1530D9B1ED37905002A9002 /* RollbarService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollbarService.swift; path = Services/RollbarService.swift; sourceTree = "<group>"; };
@@ -193,14 +226,16 @@
 		9D1575031CB1B27500EA395E /* WBooks */ = {
 			isa = PBXGroup;
 			children = (
-				D47646B822E8F5A200BF86EE /* BookLibrary */,
-				D47646B122E8B25100BF86EE /* InitialScreen */,
+				D46C8DB922F214ED009F50DC /* Screens */,
+				D46C8D6322F1E1EC009F50DC /* BarControllers */,
 				E1530D9A1ED378F9002A9002 /* Services */,
 				CEB934DE1D21A44700DF75C2 /* ConfigurationFiles */,
 				9D1575041CB1B27500EA395E /* AppDelegate.swift */,
 				9D15750B1CB1B27500EA395E /* Assets.xcassets */,
 				9D1575101CB1B27500EA395E /* Info.plist */,
 				CEB934DC1D21992100DF75C2 /* Environment.swift */,
+				D476750C22F0C7A10097D8B9 /* UIColorExtension.swift */,
+				D46C8DBC22F21968009F50DC /* Localizable.strings */,
 			);
 			path = WBooks;
 			sourceTree = "<group>";
@@ -261,28 +296,90 @@
 			path = ConfigurationFiles;
 			sourceTree = "<group>";
 		};
-		D47646B122E8B25100BF86EE /* InitialScreen */ = {
+		D46C8D6322F1E1EC009F50DC /* BarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D5F22F1D176009F50DC /* NavBarController.swift */,
+				D46C8D6122F1D50B009F50DC /* TabBarController.swift */,
+			);
+			path = BarControllers;
+			sourceTree = "<group>";
+		};
+		D46C8D8C22F20683009F50DC /* BookLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D9022F20683009F50DC /* Book.swift */,
+				D46C8D9122F20683009F50DC /* BookCell.swift */,
+				D46C8D9222F20683009F50DC /* BookCell.xib */,
+				D46C8D9322F20683009F50DC /* BookInfo.swift */,
+				D46C8D9422F20683009F50DC /* BookLibraryController.swift */,
+				D46C8D9522F20683009F50DC /* BooksTableView.swift */,
+				D46C8D9622F20683009F50DC /* BooksTableView.xib */,
+			);
+			path = BookLibrary;
+			sourceTree = "<group>";
+		};
+		D46C8D8D22F20683009F50DC /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D8E22F20683009F50DC /* AddNewController.swift */,
+				D46C8D8F22F20683009F50DC /* AddNewView.swift */,
+				D46C8DAF22F2074C009F50DC /* AddNewView.xib */,
+			);
+			path = AddNew;
+			sourceTree = "<group>";
+		};
+		D46C8D9722F20683009F50DC /* Rentals */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D9822F20683009F50DC /* RentalsController.swift */,
+				D46C8D9922F20683009F50DC /* RentalsView.swift */,
+				D46C8DB122F2076C009F50DC /* RentalsView.xib */,
+			);
+			path = Rentals;
+			sourceTree = "<group>";
+		};
+		D46C8D9A22F20683009F50DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D9B22F20683009F50DC /* SettingsController.swift */,
+				D46C8D9C22F20683009F50DC /* SettingsView.swift */,
+				D46C8DB322F2077D009F50DC /* SettingsView.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D46C8D9D22F20683009F50DC /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				D46C8D9E22F20683009F50DC /* WishlistController.swift */,
+				D46C8D9F22F20683009F50DC /* WishlistView.swift */,
+				D46C8DB522F207B7009F50DC /* WishlistView.xib */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		D46C8DB922F214ED009F50DC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D47646B122E8B25100BF86EE /* Introduction */,
+				D46C8D8D22F20683009F50DC /* AddNew */,
+				D46C8D9722F20683009F50DC /* Rentals */,
+				D46C8D9A22F20683009F50DC /* Settings */,
+				D46C8D9D22F20683009F50DC /* Wishlist */,
+				D46C8D8C22F20683009F50DC /* BookLibrary */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D47646B122E8B25100BF86EE /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
 				D47646B222E8B27900BF86EE /* InitalScreenView.swift */,
 				D47646B422E8B29500BF86EE /* InitialScreenView.xib */,
 				D47646B622E8B39200BF86EE /* InitialScreenController.swift */,
 			);
-			path = InitialScreen;
-			sourceTree = "<group>";
-		};
-		D47646B822E8F5A200BF86EE /* BookLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				D474B2A722EA206F00586249 /* BookLibraryController.swift */,
-				D4E618E722EA3BC000482654 /* BooksTableView.swift */,
-				D4E618EF22EA3DA700482654 /* BooksTableView.xib */,
-				D47646B922E8F73900BF86EE /* BookCell.swift */,
-				D47646BB22E8F7DE00BF86EE /* BookCell.xib */,
-				D474B2A322EA1E2600586249 /* Book.swift */,
-				D474B2A522EA1F6800586249 /* BookInfo.swift */,
-			);
-			path = BookLibrary;
+			path = Introduction;
 			sourceTree = "<group>";
 		};
 		E1530D9A1ED378F9002A9002 /* Services */ = {
@@ -386,6 +483,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 9D1574F81CB1B27500EA395E;
 			productRefGroup = 9D1575021CB1B27500EA395E /* Products */;
@@ -404,10 +502,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46C8DB222F2076C009F50DC /* RentalsView.xib in Resources */,
+				D46C8DA822F20683009F50DC /* BooksTableView.xib in Resources */,
 				D47646B522E8B29500BF86EE /* InitialScreenView.xib in Resources */,
-				D4E618F022EA3DA700482654 /* BooksTableView.xib in Resources */,
+				D46C8DB622F207B7009F50DC /* WishlistView.xib in Resources */,
+				D46C8DBA22F21968009F50DC /* Localizable.strings in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
-				D47646BC22E8F7DE00BF86EE /* BookCell.xib in Resources */,
+				D46C8DB022F2074C009F50DC /* AddNewView.xib in Resources */,
+				D46C8DA422F20683009F50DC /* BookCell.xib in Resources */,
+				D46C8DB422F2077D009F50DC /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,16 +581,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D474B2A622EA1F6800586249 /* BookInfo.swift in Sources */,
-				D474B2A422EA1E2600586249 /* Book.swift in Sources */,
-				D47646BA22E8F73900BF86EE /* BookCell.swift in Sources */,
+				D46C8DAB22F20683009F50DC /* SettingsController.swift in Sources */,
+				D46C8DAE22F20683009F50DC /* WishlistView.swift in Sources */,
+				D46C8DA622F20683009F50DC /* BookLibraryController.swift in Sources */,
+				D46C8DA322F20683009F50DC /* BookCell.swift in Sources */,
+				D46C8DA522F20683009F50DC /* BookInfo.swift in Sources */,
+				D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */,
+				D46C8DA122F20683009F50DC /* AddNewView.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
+				D46C8DA222F20683009F50DC /* Book.swift in Sources */,
+				D46C8DAA22F20683009F50DC /* RentalsView.swift in Sources */,
 				D47646B722E8B39200BF86EE /* InitialScreenController.swift in Sources */,
-				D474B2A822EA206F00586249 /* BookLibraryController.swift in Sources */,
 				E1530D9C1ED37905002A9002 /* RollbarService.swift in Sources */,
+				D46C8D6022F1D176009F50DC /* NavBarController.swift in Sources */,
 				D47646B322E8B27900BF86EE /* InitalScreenView.swift in Sources */,
-				D4E618E822EA3BC000482654 /* BooksTableView.swift in Sources */,
+				D46C8DA022F20683009F50DC /* AddNewController.swift in Sources */,
+				D46C8DAD22F20683009F50DC /* WishlistController.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
+				D476750D22F0C7A10097D8B9 /* UIColorExtension.swift in Sources */,
+				D46C8DA722F20683009F50DC /* BooksTableView.swift in Sources */,
+				D46C8DA922F20683009F50DC /* RentalsController.swift in Sources */,
+				D46C8DAC22F20683009F50DC /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,12 +636,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D46C8DBC22F21968009F50DC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D46C8DBB22F21968009F50DC /* en */,
+				D46C8DBD22F21B4B009F50DC /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		CE39E8751D1DAED00004FE95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E17065121F75B6A10042755C /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -634,6 +761,7 @@
 			baseConfigurationReference = CEB934E11D21A49A00DF75C2 /* Alpha.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -739,6 +867,7 @@
 			baseConfigurationReference = E17065131F75B6A10042755C /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -843,6 +972,7 @@
 			baseConfigurationReference = E12DE1621F772A370072C2FF /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WBooks
+
+  Created by Federico Agustin Diaz on 31/07/2019.
+  Copyright © 2019 Wolox. All rights reserved.
+*/
+
+"ADDNEW" = "Agregar Nuevo";
+"SETTINGS" = "Ajustes";
+"WISHLIST" = "Lista de Deseos";
+"LIBRARY" = "Biblioteca";
+"RENTALS" = "Alquileres";

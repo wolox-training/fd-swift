@@ -34,6 +34,14 @@ class BookLibraryController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         libraryItems = BookInfo.sharedInstance.getAllBooks()
+        
+        title = "LIBRARY".localized()
+        
+        let search = UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        let notifications = UIBarButtonItem(image: UIImage(named: "Notifications"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItems = [search]
+        navigationItem.leftBarButtonItems = [notifications]
     }
     
     private func configureTableView() {
