@@ -15,38 +15,23 @@ class TabBarController: UITabBarController {
         tabBar.barTintColor = .backgroundLightBlue()
         
         let libraryNavigator = NavBarController(rootViewController: BookLibraryController())
-        libraryNavigator.tabBarItem = UITabBarItem()
-        libraryNavigator.tabBarItem.title = "LIBRARY".localized()
-        libraryNavigator.tabBarItem.image = UIImage(named: "Library")!
-        libraryNavigator.tabBarItem.selectedImage = UIImage(named: "LibraryActive")!
+        libraryNavigator.tabBarItem = UITabBarItem(title: "LIBRARY".localized(), image: UIImage.libraryImage, selectedImage: UIImage.libraryImage)
         libraryNavigator.tabBarItem.tag = 0
         
         let wishlistNavigator = NavBarController(rootViewController: WishlistController())
-        wishlistNavigator.tabBarItem = UITabBarItem()
-        wishlistNavigator.tabBarItem.title = "WISHLIST".localized()
-        wishlistNavigator.tabBarItem.image = UIImage(named: "Wishlist")!
-        wishlistNavigator.tabBarItem.image = UIImage(named: "WishlistActive")!
+        wishlistNavigator.tabBarItem = UITabBarItem(title: "WISHLIST".localized(), image: UIImage.wishlistImage, selectedImage: UIImage.wishlistActiveImage)
         wishlistNavigator.tabBarItem.tag = 1
         
         let addnewNavigator = NavBarController(rootViewController: AddNewController())
-        addnewNavigator.tabBarItem = UITabBarItem()
-        addnewNavigator.tabBarItem.title = "ADDNEW".localized()
-        addnewNavigator.tabBarItem.image = UIImage(named: "AddNew")!
-        addnewNavigator.tabBarItem.image = UIImage(named: "AddNewActive")!
+        addnewNavigator.tabBarItem = UITabBarItem(title: "ADDNEW".localized(), image: UIImage.addNewImage, selectedImage: UIImage.addNewActiveImage)
         addnewNavigator.tabBarItem.tag = 2
         
         let rentalsNavigator = NavBarController(rootViewController: RentalsController())
-        rentalsNavigator.tabBarItem = UITabBarItem()
-        rentalsNavigator.tabBarItem.title = "RENTALS".localized()
-        rentalsNavigator.tabBarItem.image = UIImage(named: "Rentals")!
-        rentalsNavigator.tabBarItem.image = UIImage(named: "RentalsActive")!
+        rentalsNavigator.tabBarItem = UITabBarItem(title: "RENTALS".localized(), image: UIImage.rentalsImage, selectedImage: UIImage.rentalsActiveImage)
         rentalsNavigator.tabBarItem.tag = 3
         
         let settingsNavigator = NavBarController(rootViewController: SettingsController())
-        settingsNavigator.tabBarItem = UITabBarItem()
-        settingsNavigator.tabBarItem.title = "SETTINGS".localized()
-        settingsNavigator.tabBarItem.image = UIImage(named: "Settings")!
-        settingsNavigator.tabBarItem.image = UIImage(named: "SettingsActive")!
+        settingsNavigator.tabBarItem = UITabBarItem(title: "SETTINGS".localized(), image: UIImage.settingsImage, selectedImage: UIImage.settingsActiveImage)
         settingsNavigator.tabBarItem.tag = 4
         
         viewControllers = [libraryNavigator, wishlistNavigator, addnewNavigator, rentalsNavigator, settingsNavigator]

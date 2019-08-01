@@ -19,7 +19,7 @@ class NavBarController: UINavigationController {
         navigationBar.barStyle = .default
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.backgroundColor = .backgroundLightBlue()
-        navigationBar.setBackgroundImage(UIImage(named: "NavBarBackground")!.resizableImage(withCapInsets: .zero, resizingMode: .stretch), for: .default)
+        navigationBar.setBackgroundImage(UIImage.navBarBackgroundImage.resizableImage(withCapInsets: .zero, resizingMode: .stretch), for: .default)
         navigationBar.shadowImage = UIImage()
     }
 }

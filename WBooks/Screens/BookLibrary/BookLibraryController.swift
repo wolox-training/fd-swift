@@ -37,8 +37,8 @@ class BookLibraryController: UIViewController {
         
         title = "LIBRARY".localized()
         
-        let search = UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
-        let notifications = UIBarButtonItem(image: UIImage(named: "Notifications"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        let search = UIBarButtonItem.searchButton
+        let notifications = UIBarButtonItem.notificationsButton
         
         navigationItem.rightBarButtonItems = [search]
         navigationItem.leftBarButtonItems = [notifications]
