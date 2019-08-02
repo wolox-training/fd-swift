@@ -23,9 +23,4 @@ class BookCell: UITableViewCell, NibLoadable {
     override func awakeFromNib() {
         backgroundColor = .clear
     }
-    
-    func configureCell(with book: Book) {
-        self.bookTitle.text = book.bookTitle
-        self.bookAuthor.text = book.bookAuthor
-    }
 }

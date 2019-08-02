@@ -22,6 +22,10 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
+    lazy var libraryViewModel: BookLibraryViewModel = {
+        return BookLibraryViewModel()
+    }()
+    
     init() {
         super.init(nibName: .none, bundle: .none)
     }
@@ -32,8 +36,8 @@ class BookLibraryController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initLibraryTableViewModel()
         configureTableView()
-        libraryItems = BookInfo.sharedInstance.getAllBooks()
         
         title = "LIBRARY".localized()
         
@@ -44,13 +48,21 @@ class BookLibraryController: UIViewController {
         navigationItem.leftBarButtonItems = [notifications]
     }
     
+    private func initLibraryTableViewModel() {
+        libraryViewModel.reloadViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?._view.table.reloadData()
+            }
+        }
+    libraryViewModel.loadBooks()
+    }
+    
     private func configureTableView() {
         _view.table.delegate = self
         _view.table.dataSource = self
         _view.table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        _view.table.register(cell: BookCell.self)
+        _view.configureLibraryTableView()
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -61,16 +73,29 @@ extension BookLibraryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return libraryItems.count
+        return libraryViewModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: BookCell = tableView.dequeue(cell: BookCell.self)!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as? BookCell else {
+            fatalError("Cell not exists")
+        }
         
-        let book: Book = libraryItems[indexPath.row]
-        
-        cell.configureCell(with: book)
+        cell.bookImage.image = UIImage.bookCover
+        let book = libraryViewModel.getCellViewModel(at: indexPath)
+            let urlString = book.image
+                if let url = URL(string: urlString) {
+                    if let data = try? Data(contentsOf: url) {
+                        let image: UIImage = UIImage(data: data)!
+                        DispatchQueue.main.async {
+                            BookInfo.sharedInstance.imageCache.setObject(image, forKey: NSString(string: urlString))
+                            cell.bookImage.image = image
+                        }
+                    }
+                }
+        cell.bookTitle.text = book.title
+        cell.bookAuthor.text = book.author
         
         return cell
     }
