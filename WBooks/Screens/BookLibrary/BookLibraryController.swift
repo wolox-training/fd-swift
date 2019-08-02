@@ -85,6 +85,11 @@ extension BookLibraryController: UITableViewDataSource {
         cell.bookImage.image = UIImage.bookCover
         let book = libraryViewModel.getCellViewModel(at: indexPath)
             let urlString = book.image
+        if let cachedImage = BookInfo.sharedInstance.imageCache.object(forKey: NSString(string: (book.image))) {
+            DispatchQueue.main.async {
+                cell.bookImage.image = cachedImage
+            }
+        } else {
                 if let url = URL(string: urlString) {
                     if let data = try? Data(contentsOf: url) {
                         let image: UIImage = UIImage(data: data)!
@@ -94,6 +99,7 @@ extension BookLibraryController: UITableViewDataSource {
                         }
                     }
                 }
+        }
         cell.bookTitle.text = book.title
         cell.bookAuthor.text = book.author
         
