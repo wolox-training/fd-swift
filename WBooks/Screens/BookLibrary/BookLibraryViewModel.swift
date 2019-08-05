@@ -20,13 +20,9 @@ class BookLibraryViewModel {
         return libraryItems.count
     }
     
-    var heightOfCells: CGFloat {
-        return 105
-    }
-    
     var reloadViewClosure: (() -> Void)?
     
-    func getCellViewModel(at indexPath: IndexPath) -> Book {
+    func getCellBook(at indexPath: IndexPath) -> Book {
         return libraryItems[indexPath.row]
     }
     
