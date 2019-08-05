@@ -15,7 +15,5 @@ class BooksTableView: UITableViewCell, NibLoadable {
        func configureLibraryTableView() {
             table.backgroundColor = .backgroundLightBlue()
             table.separatorStyle = .none
-            let nib = UINib.init(nibName: "BookCell", bundle: nil)
-            table.register(nib, forCellReuseIdentifier: "BookCell")
         }
 }

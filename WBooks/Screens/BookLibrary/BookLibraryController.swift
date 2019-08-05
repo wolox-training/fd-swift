@@ -61,6 +61,7 @@ class BookLibraryController: UIViewController {
         _view.table.delegate = self
         _view.table.dataSource = self
         _view.table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        _view.table.register(cell: BookCell.self)
         _view.configureLibraryTableView()
     }
 }
