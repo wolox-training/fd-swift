@@ -11,11 +11,9 @@ import WolmoCore
 
 class BooksTableView: UITableViewCell, NibLoadable {
     
-    @IBOutlet weak var table: UITableView! {
-        didSet {
+    @IBOutlet weak var table: UITableView!
+       func configureLibraryTableView() {
             table.backgroundColor = .backgroundLightBlue()
             table.separatorStyle = .none
         }
-    }
-
 }

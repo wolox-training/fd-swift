@@ -22,6 +22,8 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
+    var libraryViewModel = BookLibraryViewModel()
+    
     init() {
         super.init(nibName: .none, bundle: .none)
     }
@@ -32,8 +34,8 @@ class BookLibraryController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initLibraryTableViewModel()
         configureTableView()
-        libraryItems = BookInfo.sharedInstance.getAllBooks()
         
         title = "LIBRARY".localized()
         
@@ -44,13 +46,22 @@ class BookLibraryController: UIViewController {
         navigationItem.leftBarButtonItems = [notifications]
     }
     
+    private func initLibraryTableViewModel() {
+        libraryViewModel.reloadViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?._view.table.reloadData()
+            }
+        }
+    libraryViewModel.loadBooks()
+    }
+    
     private func configureTableView() {
         _view.table.delegate = self
         _view.table.dataSource = self
         _view.table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         _view.table.register(cell: BookCell.self)
+        _view.configureLibraryTableView()
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -61,17 +72,14 @@ extension BookLibraryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return libraryItems.count
+        return libraryViewModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BookCell = tableView.dequeue(cell: BookCell.self)!
-        
-        let book: Book = libraryItems[indexPath.row]
-        
-        cell.configureCell(with: book)
-        
+        let book = libraryViewModel.getCellBook(at: indexPath)
+        cell.configureCell(with: book, with: cell)
         return cell
     }
     

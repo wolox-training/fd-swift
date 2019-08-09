@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         tabBar.barTintColor = .backgroundLightBlue()
         
         let libraryNavigator = NavBarController(rootViewController: BookLibraryController())
-        libraryNavigator.tabBarItem = UITabBarItem(title: "LIBRARY".localized(), image: UIImage.libraryImage, selectedImage: UIImage.libraryImage)
+        libraryNavigator.tabBarItem = UITabBarItem(title: "LIBRARY".localized(), image: UIImage.libraryImage, selectedImage: UIImage.libraryActiveImage)
         libraryNavigator.tabBarItem.tag = 0
         
         let wishlistNavigator = NavBarController(rootViewController: WishlistController())

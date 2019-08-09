@@ -38,7 +38,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BookCover" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-NV-eTX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-NV-eTX">
                             <rect key="frame" x="47" y="23" width="40" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -58,7 +58,4 @@
             <point key="canvasLocation" x="-55.797101449275367" y="-1485.9375"/>
         </view>
     </objects>
-    <resources>
-        <image name="BookCover" width="40" height="60"/>
-    </resources>
 </document>

@@ -24,8 +24,26 @@ class BookCell: UITableViewCell, NibLoadable {
         backgroundColor = .clear
     }
     
-    func configureCell(with book: Book) {
-        self.bookTitle.text = book.bookTitle
-        self.bookAuthor.text = book.bookAuthor
+    func configureCell(with book: Book, with cell: BookCell) {
+        cell.bookImage.image = UIImage.bookCover
+        
+        let urlString = book.image
+        if let cachedImage = BookInfo.sharedInstance.imageCache.object(forKey: NSString(string: (book.image))) {
+            DispatchQueue.main.async {
+                cell.bookImage.image = cachedImage
+            }
+        } else {
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    let image: UIImage = UIImage(data: data)!
+                    DispatchQueue.main.async {
+                        BookInfo.sharedInstance.imageCache.setObject(image, forKey: NSString(string: urlString))
+                        cell.bookImage.image = image
+                    }
+                }
+            }
+        }
+        cell.bookTitle.text = book.title
+        cell.bookAuthor.text = book.author
     }
 }

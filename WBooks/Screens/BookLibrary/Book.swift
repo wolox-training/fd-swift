@@ -10,11 +10,19 @@ import UIKit
 
 struct Book: Codable {
     
-    var bookTitle: String?
-    var bookAuthor: String?
+    let id: Int
+    let title: String
+    let author: String
+    let genre: String
+    let year: String
+    let image: String
     
     enum CodingKeys: String, CodingKey {
-        case bookTitle
-        case bookAuthor
+        case id
+        case title
+        case author
+        case genre
+        case year
+        case image
     }
 }

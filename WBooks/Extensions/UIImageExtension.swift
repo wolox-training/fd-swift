@@ -11,6 +11,10 @@ import UIKit
 
 extension UIImage {
     
+    public static var bookCover: UIImage {
+        return UIImage(named: "BookCover")!
+    }
+    
     public static var libraryImage: UIImage {
         return UIImage(named: "Library")!
     }
