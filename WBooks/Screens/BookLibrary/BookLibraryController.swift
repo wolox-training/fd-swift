@@ -22,9 +22,7 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
-    var libraryViewModel: BookLibraryViewModel = {
-        return BookLibraryViewModel()
-    }()
+    var libraryViewModel = BookLibraryViewModel()
     
     init() {
         super.init(nibName: .none, bundle: .none)
