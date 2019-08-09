@@ -11,3 +11,7 @@
 "WISHLIST" = "Wishlist";
 "LIBRARY" = "Library";
 "RENTALS" = "Rentals";
+"AVAILABLE" = "Available";
+"UNAVAILABLE" = "Not Available";
+"RENT_UNAVAILABLE" = "The Rent is Unavaiable";
+"BOOK_DETAIL" = "Book Detail";

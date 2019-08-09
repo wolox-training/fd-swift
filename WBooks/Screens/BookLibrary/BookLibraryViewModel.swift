@@ -10,28 +10,49 @@ import UIKit
 
 class BookLibraryViewModel {
     
-    var libraryItems: [Book] = [] {
+    var bookLibraryModel: [Book] = [] {
         didSet {
-            self.reloadViewClosure?()
+            reloadViewClosure?()
         }
     }
     
-    var numberOfCells: Int {
-        return libraryItems.count
+    private var bookDetailsModel: [BookDetails] = [] {
+        didSet {
+            reloadViewClosure?()
+        }
+    }
+    
+    var numberOfCellsBookLibrary: Int {
+        return bookLibraryModel.count
+    }
+    
+    var numberOfCellsBookDetail: Int {
+        return bookDetailsModel.count
     }
     
     var reloadViewClosure: (() -> Void)?
     
-    func getCellBook(at indexPath: IndexPath) -> Book {
-        return libraryItems[indexPath.row]
+    func getCellBookLibrary(at indexPath: IndexPath) -> Book {
+        return bookLibraryModel[indexPath.row]
+    }
+    
+    func getCellBookDetail(at indexPath: IndexPath) -> BookDetails {
+        return bookDetailsModel[indexPath.row]
     }
     
     func loadBooks() {
-        WBNetworkManager.manager.fetchBooks(onSuccess: { (books) in
-            self.libraryItems = books
-        }, onError: { (error) in
+        let successBooks: ([Book]) -> Void = { (books) in
+            self.bookLibraryModel = books
+            self.bookDetailsModel = self.bookLibraryModel.map { BookDetails(book: $0) }
+        }
+        WBNetworkManager.manager.fetchBooks(onSuccess: successBooks, onError: { (error) in
             print(error)
         })
+    }
+    
+    func selectBook(at indexPath: IndexPath) -> BookDetails {
+        let book = bookDetailsModel[indexPath.row]
+        return book
     }
     
 }
