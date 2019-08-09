@@ -44,7 +44,6 @@ class BookDetailFullViewModel {
         }
         
         WBNetworkManager.manager.getBookComments(book: bookView.book, onSuccess: successComments, onError: failureComments)
-        dump("llego")
     }
     
     func rentBook(book: BookDetails) {

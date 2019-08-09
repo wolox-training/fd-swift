@@ -42,7 +42,6 @@ class WBNetworkManager: NSObject {
         }
     
     public func getBookComments(book: Book, onSuccess: @escaping ([BookComment]) -> Void, onError: @escaping (Error) -> Void) {
-        dump(book.id)
         let url = URL(string: "https://swift-training-backend.herokuapp.com/books/\(book.id)/comments")!
         dump(url)
         let headers: [String: String] = commonHeaders()
@@ -58,6 +57,7 @@ class WBNetworkManager: NSObject {
                     onError(BookError.decodeError)
                     return
                 }
+                dump(comments)
                 onSuccess(comments)
             case .failure(let error):
                 onError(error)
@@ -67,13 +67,15 @@ class WBNetworkManager: NSObject {
     
     public func rentBook(book: Book, onSuccess: @escaping (BookRent) -> Void, onError: @escaping (Error) -> Void) {
         
-        let url = URL(string: "https://swift-training-backend.herokuapp.com/users/userId/rents")!
+        let userId = 7
         
-        let params: [String: Any] = ["userID": "userId", //cambiar
+        let url = URL(string: "https://swift-training-backend.herokuapp.com/users/\(userId)/rents")!
+        
+        let params: [String: Any] = ["userID": userId,
             "bookID": book.id,
-            "from": 0,
-            "to": 2]
-        
+            "from": firstDate(),
+            "to": secondDate()]
+                       dump(params)
         request(url, method: HTTPMethod.post, parameters: params, encoding: JSONEncoding.default, headers: commonHeaders()).responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -90,6 +92,21 @@ class WBNetworkManager: NSObject {
                 onError(error)
             }
         }
+    }
+    
+    private func firstDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: Date())
+    }
+    
+    private func secondDate() -> String {
+        let tomorrowDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: tomorrowDate)
     }
     
     private func commonHeaders() -> [String: String] {

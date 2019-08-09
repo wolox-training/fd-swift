@@ -70,6 +70,8 @@ class BookDetailFullViewController: UIViewController {
         _view.detailTable.delegate = self
         _view.detailTable.dataSource = self
         _view.configureDetailTableView()
+        let commentBookNib = UINib.init(nibName: "BookCommentCell", bundle: nil)
+        _view.detailTable.register(commentBookNib, forCellReuseIdentifier: "BookCommentCell")
     }
 }
 
@@ -89,6 +91,9 @@ extension BookDetailFullViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCommentCell", for: indexPath) as? BookCommentCell else {
             fatalError("Cell not exists")
         }
+        
+        let comment = bookDetailViewModel.getCellBookDetail(at: indexPath)
+        cell.commentViewModel = comment
         
         return cell
     }

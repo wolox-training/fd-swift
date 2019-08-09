@@ -10,7 +10,6 @@ import UIKit
 import WolmoCore
 
 protocol DetailBookDelegate {
-    func addToWishlist()
     func rentBook()
 }
 

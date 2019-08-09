@@ -16,9 +16,9 @@ class BookDetailFullView: UIView, NibLoadable {
     
     func configureDetailTableView() {
         
-        let commentBookNib = UINib.init(nibName: "BookCommentCell", bundle: nil)
-        detailTable.register(commentBookNib, forCellReuseIdentifier: "BookCommentCell")
+        backgroundColor = .backgroundLightBlue()
+        detailTable.separatorStyle = .none
         
+        detailTable.layer.cornerRadius = 5
     }
-
 }
