@@ -48,11 +48,11 @@ class BookDetailView: UITableViewCell, NibLoadable {
         if bookViewModel.bookStatus.isBookAvailable() {
             bookAvaiability.textColor = .green
             rentButton.layer.borderColor = UIColor.blueBorder().cgColor
-            rentButton.backgroundColor = UIColor.blueBorder()
+            rentButton.setBlueGradient()
         } else {
             bookAvaiability.textColor = .red
             rentButton.layer.borderColor = UIColor.greyButton().cgColor
-            rentButton.backgroundColor = UIColor.greyButton()
+            rentButton.setGreyGradient()
         }
     }
     @IBAction func rentButton(_ sender: Any) {
