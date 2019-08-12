@@ -80,10 +80,6 @@ extension BookLibraryController: UITableViewDataSource {
         return bookLibraryModel.numberOfCellsBookLibrary
     }
     
-    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookDetailsModel.numberOfCellsBookDetail
-    }*/
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BookCell = tableView.dequeue(cell: BookCell.self)!

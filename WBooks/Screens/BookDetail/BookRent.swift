@@ -23,5 +23,4 @@ struct BookRent: Codable {
         case bookID
         case userID
     }
-    
 }

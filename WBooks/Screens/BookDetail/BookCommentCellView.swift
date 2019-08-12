@@ -18,9 +18,7 @@ class BookCommentCellView: UITableViewCell {
         
         contentView.backgroundColor = .white
         backgroundColor = .clear
-        
         selectionStyle = .blue
-        
         userImage.layer.cornerRadius = userImage.frame.size.width/2
     }
     
