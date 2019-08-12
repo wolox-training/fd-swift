@@ -47,7 +47,6 @@ class BookLibraryController: UIViewController {
         
         let search = UIBarButtonItem.searchButton
         let notifications = UIBarButtonItem.notificationsButton
-        navigationItem.backBarButtonItem?.title = ""
         navigationItem.rightBarButtonItems = [search]
         navigationItem.leftBarButtonItems = [notifications]
     }

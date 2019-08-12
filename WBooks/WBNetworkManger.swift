@@ -43,7 +43,6 @@ class WBNetworkManager: NSObject {
     
     public func getBookComments(book: Book, onSuccess: @escaping ([BookComment]) -> Void, onError: @escaping (Error) -> Void) {
         let url = URL(string: "https://swift-training-backend.herokuapp.com/books/\(book.id)/comments")!
-        dump(url)
         let headers: [String: String] = commonHeaders()
         
         request(url, method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
@@ -57,7 +56,6 @@ class WBNetworkManager: NSObject {
                     onError(BookError.decodeError)
                     return
                 }
-                dump(comments)
                 onSuccess(comments)
             case .failure(let error):
                 onError(error)
@@ -75,7 +73,6 @@ class WBNetworkManager: NSObject {
             "bookID": book.id,
             "from": firstDate(),
             "to": secondDate()]
-                       dump(params)
         request(url, method: HTTPMethod.post, parameters: params, encoding: JSONEncoding.default, headers: commonHeaders()).responseJSON { response in
             switch response.result {
             case .success(let value):

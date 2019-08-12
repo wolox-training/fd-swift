@@ -1,5 +1,5 @@
 //
-//  BookCommentCell.swift
+//  BookCommentCellView.swift
 //  WBooks
 //
 //  Created by Federico Agustin Diaz on 06/08/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookCommentCell: UITableViewCell {
+class BookCommentCellView: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userComment: UILabel!

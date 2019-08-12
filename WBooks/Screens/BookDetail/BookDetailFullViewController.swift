@@ -12,7 +12,7 @@ import WolmoCore
 class BookDetailFullViewController: UIViewController {
     
     private let _view: BookDetailFullView = BookDetailFullView.loadFromNib()!
-    private let _detailHeaderView: BookDetail = BookDetail.loadFromNib()!
+    private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
     
     lazy var bookDetailViewModel: BookDetailFullViewModel = {
         return BookDetailFullViewModel()
@@ -70,8 +70,8 @@ class BookDetailFullViewController: UIViewController {
         _view.detailTable.delegate = self
         _view.detailTable.dataSource = self
         _view.configureDetailTableView()
-        let commentBookNib = UINib.init(nibName: "BookCommentCell", bundle: nil)
-        _view.detailTable.register(commentBookNib, forCellReuseIdentifier: "BookCommentCell")
+        let commentBookNib = UINib.init(nibName: "BookCommentCellView", bundle: nil)
+        _view.detailTable.register(commentBookNib, forCellReuseIdentifier: "BookCommentCellView")
     }
 }
 
@@ -88,7 +88,7 @@ extension BookDetailFullViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCommentCell", for: indexPath) as? BookCommentCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCommentCellView", for: indexPath) as? BookCommentCellView else {
             fatalError("Cell not exists")
         }
         

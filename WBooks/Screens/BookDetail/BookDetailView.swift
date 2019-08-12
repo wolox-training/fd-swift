@@ -9,11 +9,11 @@
 import UIKit
 import WolmoCore
 
-protocol DetailBookDelegate {
+protocol DetailBookDelegate: class {
     func rentBook()
 }
 
-class BookDetail: UITableViewCell, NibLoadable {
+class BookDetailView: UITableViewCell, NibLoadable {
     
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAvaiability: UILabel!
@@ -35,7 +35,7 @@ class BookDetail: UITableViewCell, NibLoadable {
     }
     @IBOutlet weak var bookImage: UIImageView!
     
-    var delegate: DetailBookDelegate?
+    weak var delegate: DetailBookDelegate?
     
     func setup(with bookViewModel: BookDetails) {
         bookImage.loadImageUsingCache(withUrl: bookViewModel.bookImageURL)

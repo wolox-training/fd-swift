@@ -11,7 +11,7 @@ import WolmoCore
 
 class BookDetailFullView: UIView, NibLoadable {
     
-    @IBOutlet weak var detailHeaderView: BookDetail!
+    @IBOutlet weak var detailHeaderView: BookDetailView!
     @IBOutlet weak var detailTable: UITableView!
     
     func configureDetailTableView() {
