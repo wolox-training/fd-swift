@@ -49,10 +49,12 @@ class BookDetailView: UITableViewCell, NibLoadable {
             bookAvaiability.textColor = .green
             rentButton.layer.borderColor = UIColor.blueBorder().cgColor
             rentButton.setBlueGradient()
+            rentButton.clipsToBounds = true
         } else {
             bookAvaiability.textColor = .red
             rentButton.layer.borderColor = UIColor.greyButton().cgColor
             rentButton.setGreyGradient()
+            rentButton.clipsToBounds = true
         }
     }
     @IBAction func rentButton(_ sender: Any) {
