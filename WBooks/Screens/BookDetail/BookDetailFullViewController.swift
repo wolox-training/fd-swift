@@ -33,6 +33,13 @@ class BookDetailFullViewController: UIViewController {
         configureTableView()
         
         initBookDetailTableViewModel()
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "Back"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItems = [backButton]
+    }
+    
+    @objc func backButtonPressed() {
+        navigationController?.popViewController(animated: true)
     }
     
     override func loadView() {
