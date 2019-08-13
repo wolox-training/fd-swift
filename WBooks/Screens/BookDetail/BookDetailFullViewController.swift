@@ -38,12 +38,15 @@ class BookDetailFullViewController: UIViewController {
         navigationItem.leftBarButtonItems = [backButton]
     }
     
+    override func viewDidLayoutSubviews() {
+        _detailHeaderView.setup(with: bookViewModel)
+    }
+    
     @objc func backButtonPressed() {
         navigationController?.popViewController(animated: true)
     }
     
     override func loadView() {
-        _detailHeaderView.setup(with: bookViewModel)
         _detailHeaderView.delegate = self
         _view.detailHeaderView.addSubview(_detailHeaderView)
         view = _view
