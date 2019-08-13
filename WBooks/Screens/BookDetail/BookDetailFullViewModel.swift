@@ -49,7 +49,7 @@ class BookDetailFullViewModel {
     func rentBook(book: BookDetails) {
         
         let successRent: (BookRent) -> Void = { (rent) in
-            self.showAlertClosure?("Se ha reservado el libro")
+            self.showAlertClosure?("BOOK_RESERVED".localized())
         }
         
         let failureRent: (Error) -> Void = { (error) in
