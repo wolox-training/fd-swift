@@ -18,4 +18,7 @@ extension UIBarButtonItem {
         return UIBarButtonItem(image: UIImage(named: "Notifications"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
     }
     
+    class func backButton(for viewController: BookDetailFullViewController, action: Selector) -> UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(named: "Back"), style: UIBarButtonItem.Style.plain, target: viewController, action: action)
+    }
 }

@@ -34,7 +34,7 @@ class BookDetailFullViewController: UIViewController {
         
         initBookDetailTableViewModel()
         
-        let backButton = UIBarButtonItem(image: UIImage(named: "Back"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonPressed))
+        let backButton = UIBarButtonItem.backButton(for: self, action: #selector(backButtonPressed))
         navigationItem.leftBarButtonItems = [backButton]
     }
     

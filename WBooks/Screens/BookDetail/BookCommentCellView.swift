@@ -9,7 +9,7 @@
 import UIKit
 
 class BookCommentCellView: UITableViewCell {
-    @IBOutlet weak var userImage: UIImageView!{
+    @IBOutlet weak var userImage: UIImageView! {
         didSet {
             userImage.layer.cornerRadius = userImage.frame.size.width/2
         }

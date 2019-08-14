@@ -69,10 +69,7 @@ class WBNetworkManager: NSObject {
         
         let url = URL(string: "https://swift-training-backend.herokuapp.com/users/\(userId)/rents")!
         
-        let params: [String: Any] = ["userID": userId,
-            "bookID": book.id,
-            "from": firstDate(),
-            "to": secondDate()]
+        let params: [String: Any] = ["userID": userId, "bookID": book.id, "from": firstDate(), "to": secondDate()]
         request(url, method: HTTPMethod.post, parameters: params, encoding: JSONEncoding.default, headers: commonHeaders()).responseJSON { response in
             switch response.result {
             case .success(let value):

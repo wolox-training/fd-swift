@@ -36,10 +36,6 @@ class BookLibraryViewModel {
         return bookLibraryModel[indexPath.row]
     }
     
-    func getCellBookDetail(at indexPath: IndexPath) -> BookDetails {
-        return bookDetailsModel[indexPath.row]
-    }
-    
     func loadBooks() {
         let successBooks: ([Book]) -> Void = { (books) in
             self.bookLibraryModel = books

@@ -16,7 +16,8 @@ class BookDetailFullView: UIView, NibLoadable {
     
     func configureDetailTableView() {
         backgroundColor = .backgroundLightBlue()
+        detailHeaderView.layer.cornerRadius = Constants.cornerRadiusSmall
         detailTable.separatorStyle = .none
-        detailTable.layer.cornerRadius = 5
+        detailTable.layer.cornerRadius = Constants.cornerRadiusSmall
     }
 }

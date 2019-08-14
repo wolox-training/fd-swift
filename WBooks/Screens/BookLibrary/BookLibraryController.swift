@@ -93,9 +93,6 @@ extension BookLibraryController: UITableViewDataSource {
 extension BookLibraryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellSelected = tableView.cellForRow(at: indexPath) as? BookCell
-        let rectOfCell = tableView.rectForRow(at: indexPath)
-        rectOfCellSelected = tableView.convert(rectOfCell, to: tableView.superview)
         let book = bookLibraryModel.selectBook(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let detailBookViewController = BookDetailFullViewController(with: book)

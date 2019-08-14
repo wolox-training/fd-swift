@@ -15,14 +15,19 @@ protocol DetailBookDelegate: class {
 
 class BookDetailView: UITableViewCell, NibLoadable {
     
-    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var bookTitle: UILabel! {
+        didSet {
+            bookTitle.lineBreakMode = .byWordWrapping
+            bookTitle.numberOfLines = 0
+        }
+    }
     @IBOutlet weak var bookAvaiability: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
     @IBOutlet weak var bookGenre: UILabel!
     @IBOutlet weak var bookYear: UILabel!
     @IBOutlet weak var wishlistButton: UIButton! {
         didSet {
-            wishlistButton.layer.cornerRadius = 20
+            wishlistButton.layer.cornerRadius = Constants.cornerRadiusBig
             wishlistButton.layer.borderWidth = 1
             wishlistButton.layer.borderColor = UIColor.blueBorder().cgColor
             wishlistButton.setTitleColor(.blueBorder(), for: .normal)
@@ -30,8 +35,10 @@ class BookDetailView: UITableViewCell, NibLoadable {
     }
     @IBOutlet weak var rentButton: UIButton! {
         didSet {
-            rentButton.layer.cornerRadius = 20
-            rentButton.layer.borderWidth = 1        }
+            rentButton.layer.cornerRadius = Constants.cornerRadiusBig
+            rentButton.layer.borderWidth = 1
+            rentButton.clipsToBounds = true
+        }
     }
     @IBOutlet weak var bookImage: UIImageView!
     
@@ -49,12 +56,10 @@ class BookDetailView: UITableViewCell, NibLoadable {
             bookAvaiability.textColor = .green
             rentButton.layer.borderColor = UIColor.blueBorder().cgColor
             rentButton.setBlueGradient()
-            rentButton.clipsToBounds = true
         } else {
             bookAvaiability.textColor = .red
             rentButton.layer.borderColor = UIColor.greyButton().cgColor
             rentButton.setGreyGradient()
-            rentButton.clipsToBounds = true
         }
     }
     @IBAction func rentButton(_ sender: Any) {

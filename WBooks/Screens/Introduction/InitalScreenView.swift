@@ -13,7 +13,7 @@ class InitialScreenView: UIView, NibLoadable {
     
     @IBOutlet weak var initialScreenButton: UIButton! {
         didSet {
-            initialScreenButton.layer.cornerRadius = 20
+            initialScreenButton.layer.cornerRadius = Constants.cornerRadiusBig
             initialScreenButton.layer.borderWidth = 1.5
             initialScreenButton.layer.borderColor = UIColor.white.cgColor
         }

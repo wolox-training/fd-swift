@@ -12,7 +12,7 @@ import WolmoCore
 class BookCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var cellBackground: UIView! {
         didSet {
-            cellBackground.layer.cornerRadius = 5
+            cellBackground.layer.cornerRadius = Constants.cornerRadiusSmall
             cellBackground.backgroundColor = .white
         }
     }
