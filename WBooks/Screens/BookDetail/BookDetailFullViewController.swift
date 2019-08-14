@@ -39,6 +39,8 @@ class BookDetailFullViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         _detailHeaderView.setup(with: bookViewModel)
     }
     
@@ -98,9 +100,7 @@ extension BookDetailFullViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCommentCellView", for: indexPath) as? BookCommentCellView else {
-            fatalError("Cell not exists")
-        }
+        let cell: BookCommentCellView = tableView.dequeue(cell: BookCommentCellView.self)!
         
         let comment = bookDetailViewModel.getCellBookDetail(at: indexPath)
         cell.commentViewModel = comment

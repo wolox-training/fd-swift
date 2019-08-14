@@ -22,16 +22,16 @@ extension UIButton {
     
     func setBlueGradient() {
         let colors = [
-            UIColor(red: 0.0, green: 0.68, blue: 0.93, alpha: 1),
-            UIColor(red: 0.22, green: 0.8, blue: 0.8, alpha: 1)]
+            UIColor.blueFirstGradient(),
+            UIColor.blueSecondGradient()]
         
         self.gradient = ViewGradient(colors: colors, direction: .leftToRight)
 }
     
     func setGreyGradient() {
-        let colors = [UIColor(red: 0.79, green: 0.79, blue: 0.79, alpha: 1),
-                      UIColor(red: 0.87, green: 0.87, blue: 0.87, alpha: 1),
-                      UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)]
+        let colors = [UIColor.greyFirstGradient(),
+                      UIColor.greySecondGradient(),
+                      UIColor.greyThirdGradient()]
         
         self.gradient = ViewGradient(colors: colors, direction: .leftToRight)
     }

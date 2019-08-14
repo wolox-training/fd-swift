@@ -18,4 +18,19 @@ extension UIColor {
     class func greyButton() -> UIColor {
         return UIColor(red: 0.79, green: 0.79, blue: 0.79, alpha: 1)
     }
+    class func blueFirstGradient() -> UIColor {
+        return UIColor(red: 0.0, green: 0.68, blue: 0.93, alpha: 1)
+    }
+    class func blueSecondGradient() -> UIColor {
+        return UIColor(red: 0.22, green: 0.8, blue: 0.8, alpha: 1)
+    }
+    class func greyFirstGradient() -> UIColor {
+        return UIColor(red: 0.79, green: 0.79, blue: 0.79, alpha: 1)
+    }
+    class func greySecondGradient() -> UIColor {
+        return UIColor(red: 0.87, green: 0.87, blue: 0.87, alpha: 1)
+    }
+    class func greyThirdGradient() -> UIColor {
+        return UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+    }
 }
