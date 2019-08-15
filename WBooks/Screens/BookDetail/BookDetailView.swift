@@ -44,15 +44,15 @@ class BookDetailView: UITableViewCell, NibLoadable {
     
     weak var delegate: DetailBookDelegate?
     
-    func setup(with bookViewModel: BookDetails) {
-        bookImage.loadImageUsingCache(withUrl: bookViewModel.bookImageURL)
-        bookTitle.text = bookViewModel.bookTitle
-        bookAuthor.text = bookViewModel.bookAuthor
-        bookAvaiability.text = bookViewModel.bookStatus.bookStatusText()
-        bookAuthor.text = bookViewModel.bookAuthor
-        bookYear.text = bookViewModel.bookYear
-        bookGenre.text = bookViewModel.bookGenre
-        if bookViewModel.bookStatus.isBookAvailable() {
+    func setup(with bookModel: Book) {
+        bookImage.loadImageUsingCache(withUrl: bookModel.image)
+        bookTitle.text = bookModel.title
+        bookAuthor.text = bookModel.author
+        bookAvaiability.text = bookModel.bookStatus.bookStatusText()
+        bookAuthor.text = bookModel.author
+        bookYear.text = bookModel.year
+        bookGenre.text = bookModel.genre
+        if bookModel.bookStatus.isBookAvailable() {
             bookAvaiability.textColor = .green
             rentButton.layer.borderColor = UIColor.blueBorder().cgColor
             rentButton.setBlueGradient()

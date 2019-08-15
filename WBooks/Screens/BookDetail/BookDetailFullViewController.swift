@@ -18,11 +18,11 @@ class BookDetailFullViewController: UIViewController {
         return BookDetailFullViewModel()
     }()
     
-    var bookViewModel: BookDetails!
+    var bookModel: Book!
     
-    convenience init(with bookViewModel: BookDetails) {
+    convenience init(with bookModel: Book) {
         self.init()
-        self.bookViewModel = bookViewModel
+        self.bookModel = bookModel
     }
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class BookDetailFullViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        _detailHeaderView.setup(with: bookViewModel)
+        _detailHeaderView.setup(with: bookModel)
     }
     
     @objc func backButtonPressed() {
@@ -75,7 +75,7 @@ class BookDetailFullViewController: UIViewController {
             }
         }
         
-        bookDetailViewModel.loadComments(for: bookViewModel)
+        bookDetailViewModel.loadComments(for: bookModel)
     }
     
     private func configureTableView() {
@@ -124,10 +124,10 @@ extension BookDetailFullViewController: DetailBookDelegate {
     }
     
     func rentBook() {
-        guard bookViewModel.bookStatus == .available else {
-            showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookViewModel.bookStatus.bookStatusText()))
+        guard bookModel.bookStatus == .available else {
+            showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookModel.bookStatus.bookStatusText()))
             return
         }
-        bookDetailViewModel.rentBook(book: bookViewModel)
+        bookDetailViewModel.rentBook(book: bookModel)
     }
 }

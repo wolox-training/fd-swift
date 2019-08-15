@@ -23,7 +23,7 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
-    var bookLibraryModel: BookLibraryViewModel = {
+    var bookDetailsModel: BookLibraryViewModel = {
         return BookLibraryViewModel()
     }()
     
@@ -52,12 +52,12 @@ class BookLibraryController: UIViewController {
     }
     
     private func initLibraryTableViewModel() {
-        bookLibraryModel.reloadViewClosure = { [weak self] () in
+        bookDetailsModel.reloadViewClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?._view.table.reloadData()
             }
         }
-    bookLibraryModel.loadBooks()
+    bookDetailsModel.loadBooks()
     }
     
     private func configureTableView() {
@@ -77,13 +77,13 @@ extension BookLibraryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookLibraryModel.numberOfCellsBookLibrary
+        return bookDetailsModel.numberOfCellsBookLibrary
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BookCell = tableView.dequeue(cell: BookCell.self)!
-        let book = bookLibraryModel.getCellBookLibrary(at: indexPath)
+        let book = bookDetailsModel.getCellBookLibrary(at: indexPath)
         cell.configureCell(with: book, with: cell)
         return cell
     }
@@ -93,7 +93,7 @@ extension BookLibraryController: UITableViewDataSource {
 extension BookLibraryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = bookLibraryModel.selectBook(at: indexPath)
+        let book = bookDetailsModel.selectBook(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let detailBookViewController = BookDetailFullViewController(with: book)
         navigationController?.pushViewController(detailBookViewController, animated: true)

@@ -69,7 +69,7 @@ class WBNetworkManager: NSObject {
         
         let url = URL(string: "https://swift-training-backend.herokuapp.com/users/\(userId)/rents")!
         
-        let params: [String: Any] = ["userID": userId, "bookID": book.id, "from": firstDate(), "to": secondDate()]
+        let params: [String: Any] = ["userID": userId, "bookID": book.id, "from": Date.customDate(with: Date()), "to": Date.customDate(with: Calendar.current.date(byAdding: .day, value: 1, to: Date())!)]
         request(url, method: HTTPMethod.post, parameters: params, encoding: JSONEncoding.default, headers: commonHeaders()).responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -86,21 +86,6 @@ class WBNetworkManager: NSObject {
                 onError(error)
             }
         }
-    }
-    
-    private func firstDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: Date())
-    }
-    
-    private func secondDate() -> String {
-        let tomorrowDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: tomorrowDate)
     }
     
     private func commonHeaders() -> [String: String] {

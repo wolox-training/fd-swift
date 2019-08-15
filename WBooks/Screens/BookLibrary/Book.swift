@@ -38,6 +38,9 @@ struct Book: Codable {
     let status: String
     let year: String
     let image: String
+    var bookStatus: BookStatus {
+        return BookStatus(rawValue: status) ?? .unknown
+    }
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -48,42 +51,4 @@ struct Book: Codable {
         case year
         case image
     }
-}
-
-struct BookDetails {
-    
-    let book: Book
-    
-    init(book: Book) {
-        self.book = book
-    }
-    
-    var bookId: String {
-        return String(book.id)
-    }
-    
-    var bookTitle: String {
-        return book.title
-    }
-    
-    var bookAuthor: String {
-        return book.author
-    }
-    
-    var bookStatus: BookStatus {
-        return BookStatus(rawValue: book.status) ?? .unknown
-    }
-    
-    var bookGenre: String {
-        return book.genre
-    }
-    
-    var bookYear: String {
-        return book.year
-    }
-    
-    var bookImageURL: String {
-        return book.image
-    }
-    
 }

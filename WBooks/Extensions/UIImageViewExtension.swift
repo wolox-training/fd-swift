@@ -15,7 +15,7 @@ extension UIImageView {
             return
         }
         URLSession.shared.dataTask(with: url, completionHandler: { (data, _, error) in
-            if error != nil {
+            guard error == nil else {
                 print(error!)
                 return
             }

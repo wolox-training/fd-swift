@@ -73,6 +73,7 @@
 		D477ACD222F34AB200B9997B /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D477ACD122F34AB200B9997B /* UIBarButtonItemExtension.swift */; };
 		D477ACD422F3502A00B9997B /* WBNetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D477ACD322F3502A00B9997B /* WBNetworkManger.swift */; };
 		D477ACD622F3627400B9997B /* BookLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D477ACD522F3627400B9997B /* BookLibraryViewModel.swift */; };
+		D479EE312305AB9C003C173F /* UIDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D479EE302305AB9C003C173F /* UIDateExtension.swift */; };
 		D48280A222F8BCE900A0BCDE /* BookRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48280A122F8BCE900A0BCDE /* BookRent.swift */; };
 		D48E14B022FDB2AA00CBAAED /* BookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E14AF22FDB2A900CBAAED /* BookUser.swift */; };
 		E1530D991ED378F2002A9002 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1530D981ED378F2002A9002 /* Rollbar.framework */; };
@@ -187,6 +188,7 @@
 		D477ACD122F34AB200B9997B /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
 		D477ACD322F3502A00B9997B /* WBNetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManger.swift; sourceTree = "<group>"; };
 		D477ACD522F3627400B9997B /* BookLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLibraryViewModel.swift; sourceTree = "<group>"; };
+		D479EE302305AB9C003C173F /* UIDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDateExtension.swift; sourceTree = "<group>"; };
 		D48280A122F8BCE900A0BCDE /* BookRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRent.swift; sourceTree = "<group>"; };
 		D48E14AF22FDB2A900CBAAED /* BookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookUser.swift; sourceTree = "<group>"; };
 		E12DE1621F772A370072C2FF /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				D47566B822FA0C18008671FD /* UIViewControllerExtension.swift */,
 				D4741AA922FC952000DF15EA /* UIImageViewExtension.swift */,
 				D47767B12301B7E10051298E /* UIButtonExtension.swift */,
+				D479EE302305AB9C003C173F /* UIDateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				D477ACD222F34AB200B9997B /* UIBarButtonItemExtension.swift in Sources */,
 				D48E14B022FDB2AA00CBAAED /* BookUser.swift in Sources */,
 				D47566AF22F9F27D008671FD /* BookDetailFullView.swift in Sources */,
+				D479EE312305AB9C003C173F /* UIDateExtension.swift in Sources */,
 				D46C8DAB22F20683009F50DC /* SettingsController.swift in Sources */,
 				D46C8DAE22F20683009F50DC /* WishlistView.swift in Sources */,
 				D47767B22301B7E10051298E /* UIButtonExtension.swift in Sources */,
