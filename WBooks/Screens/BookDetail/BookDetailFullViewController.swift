@@ -57,25 +57,17 @@ class BookDetailFullViewController: UIViewController {
     // MARK: - Private
     private func initBookDetailTableViewModel() {
         
-        bookDetailViewModel.showErrorAlertClosure = { [weak self] (error) in
-            DispatchQueue.main.async {
-                self?.showAlertMessage(message: error.localizedDescription)
-            }
-        }
-        
-        bookDetailViewModel.showAlertClosure = { [weak self] (message) in
-            DispatchQueue.main.async {
-                self?.showAlertMessage(message: message)
-            }
-        }
-        
         bookDetailViewModel.reloadViewClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?._view.detailTable.reloadData()
             }
         }
         
-        bookDetailViewModel.loadComments(for: bookModel)
+        bookDetailViewModel.loadComments(for: bookModel, onErrorComments: { [weak self] (error) in
+            DispatchQueue.main.async {
+                self?.showAlertMessage(message: error.localizedDescription)
+            }
+        })
     }
     
     private func configureTableView() {
@@ -120,8 +112,6 @@ extension BookDetailFullViewController: UITableViewDelegate {
 
 // MARK: - DetailBookDelegate
 extension BookDetailFullViewController: DetailBookDelegate {
-    func addToWishlist() {
-    }
     
     func rentBook() {
         guard bookModel.bookStatus == .available else {

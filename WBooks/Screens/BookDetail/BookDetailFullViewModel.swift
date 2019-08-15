@@ -33,17 +33,13 @@ class BookDetailFullViewModel {
         return commentsViewModels[indexPath.row]
     }
     
-    func loadComments(for bookView: Book) {
+    func loadComments(for bookView: Book, onErrorComments: @escaping (Error) -> Void) {
         
         let successComments: ([BookComment]) -> Void = { (comments) in
             self.commentsViewModels = comments
         }
         
-        let failureComments: (Error) -> Void = { (error) in
-            self.showErrorAlertClosure?(error)
-        }
-        
-        WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: failureComments)
+        WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: onErrorComments)
     }
     
     func rentBook(book: Book) {
