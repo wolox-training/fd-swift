@@ -23,16 +23,11 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
-    var bookDetailsModel: BookLibraryViewModel = {
-        return BookLibraryViewModel()
-    }()
+    let bookLibraryViewModel = BookLibraryViewModel()
     
     init() {
         super.init(nibName: .none, bundle: .none)
     }
-    
-    var cellSelected: BookCell!
-    var rectOfCellSelected: CGRect!
     
     override public func loadView() {
         view = _view
@@ -52,12 +47,12 @@ class BookLibraryController: UIViewController {
     }
     
     private func initLibraryTableViewModel() {
-        bookDetailsModel.reloadViewClosure = { [weak self] () in
+        bookLibraryViewModel.reloadViewClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?._view.table.reloadData()
             }
         }
-    bookDetailsModel.loadBooks()
+    bookLibraryViewModel.loadBooks()
     }
     
     private func configureTableView() {
@@ -77,13 +72,13 @@ extension BookLibraryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookDetailsModel.numberOfCellsBookLibrary
+        return bookLibraryViewModel.numberOfCellsBookLibrary
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BookCell = tableView.dequeue(cell: BookCell.self)!
-        let book = bookDetailsModel.getCellBookLibrary(at: indexPath)
+        let book = bookLibraryViewModel.getCellBookLibrary(at: indexPath)
         cell.configureCell(with: book, with: cell)
         return cell
     }
@@ -93,7 +88,7 @@ extension BookLibraryController: UITableViewDataSource {
 extension BookLibraryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = bookDetailsModel.selectBook(at: indexPath)
+        let book = bookLibraryViewModel.selectBook(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let viewModel = BookDetailFullViewModel(with: book)
         let detailBookViewController = BookDetailFullViewController(with: viewModel)

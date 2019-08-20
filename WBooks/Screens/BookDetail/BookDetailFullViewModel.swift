@@ -32,8 +32,6 @@ class BookDetailFullViewModel {
     }
     
     var reloadViewClosure: (() -> Void)?
-    var showErrorAlertClosure: ((Error) -> Void)?
-    var showAlertClosure: ((String) -> Void)?
     
     func getCellBookDetail(at indexPath: IndexPath) -> BookComment {
         return commentsViewModels[indexPath.row]
@@ -48,16 +46,8 @@ class BookDetailFullViewModel {
         WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: onErrorComments)
     }
     
-    func rentBook(book: Book) {
+    func rentBook(book: Book, onSuccessRent: @escaping (BookRent) -> Void, onFailureRent: @escaping (Error) -> Void) {
         
-        let successRent: (BookRent) -> Void = { (rent) in
-            self.showAlertClosure?("BOOK_RESERVED".localized())
-        }
-        
-        let failureRent: (Error) -> Void = { (error) in
-            self.showErrorAlertClosure?(error)
-        }
-        
-        WBNetworkManager.manager.rentBook(book: book, onSuccess: successRent, onError: failureRent)
+        WBNetworkManager.manager.rentBook(book: book, onSuccess: onSuccessRent, onError: onFailureRent)
     }
 }

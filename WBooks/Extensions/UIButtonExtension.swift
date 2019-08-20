@@ -29,7 +29,7 @@ extension UIButton {
 }
     
     func setGreyGradient() {
-        let colors = [UIColor.greyFirstGradient(),
+        let colors = [UIColor.grey(),
                       UIColor.greySecondGradient(),
                       UIColor.greyThirdGradient()]
         

@@ -58,7 +58,7 @@ class BookDetailView: UITableViewCell, NibLoadable {
             rentButton.setBlueGradient()
         } else {
             bookAvaiability.textColor = .red
-            rentButton.layer.borderColor = UIColor.greyButton().cgColor
+            rentButton.layer.borderColor = UIColor.grey().cgColor
             rentButton.setGreyGradient()
         }
     }

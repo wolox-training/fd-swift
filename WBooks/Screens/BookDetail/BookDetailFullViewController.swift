@@ -14,7 +14,7 @@ class BookDetailFullViewController: UIViewController {
     private let _view: BookDetailFullView = BookDetailFullView.loadFromNib()!
     private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
     
-    var bookDetailViewModel: BookDetailFullViewModel!
+    private var bookDetailViewModel: BookDetailFullViewModel!
     
     convenience init(with bookModel: BookDetailFullViewModel) {
         self.init()
@@ -114,6 +114,10 @@ extension BookDetailFullViewController: DetailBookDelegate {
             showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookDetailViewModel.bookModel.bookStatus.bookStatusText()))
             return
         }
-        bookDetailViewModel.rentBook(book: bookDetailViewModel.bookModel)
+        bookDetailViewModel.rentBook(book: bookDetailViewModel.bookModel, onSuccessRent: { (rent) in
+            self.showAlertMessage(message: "BOOK_RESERVED".localized())
+        }, onFailureRent: { (error) in
+            self.showAlertMessage(message: error.localizedDescription)
+        })
     }
 }
