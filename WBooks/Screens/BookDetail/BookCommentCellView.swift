@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WolmoCore
 
-class BookCommentCellView: UITableViewCell {
+class BookCommentCellView: UITableViewCell, NibLoadable {
     @IBOutlet weak var userImage: UIImageView! {
         didSet {
             userImage.layer.cornerRadius = userImage.frame.size.width/2

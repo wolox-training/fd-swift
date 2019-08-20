@@ -70,8 +70,7 @@ class BookDetailFullViewController: UIViewController {
         _view.detailTable.delegate = self
         _view.detailTable.dataSource = self
         _view.configureDetailTableView()
-        let commentBookNib = UINib.init(nibName: "BookCommentCellView", bundle: nil)
-        _view.detailTable.register(commentBookNib, forCellReuseIdentifier: "BookCommentCellView")
+        _view.detailTable.register(cell: BookCommentCellView.self)
     }
 }
 
