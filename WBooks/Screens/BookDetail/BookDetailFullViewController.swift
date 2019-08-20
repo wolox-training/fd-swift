@@ -14,15 +14,11 @@ class BookDetailFullViewController: UIViewController {
     private let _view: BookDetailFullView = BookDetailFullView.loadFromNib()!
     private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
     
-    lazy var bookDetailViewModel: BookDetailFullViewModel = {
-        return BookDetailFullViewModel()
-    }()
+    var bookDetailViewModel: BookDetailFullViewModel!
     
-    var bookModel: Book!
-    
-    convenience init(with bookModel: Book) {
+    convenience init(with bookModel: BookDetailFullViewModel) {
         self.init()
-        self.bookModel = bookModel
+        bookDetailViewModel = bookModel
     }
     
     override func viewDidLoad() {
@@ -41,7 +37,7 @@ class BookDetailFullViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        _detailHeaderView.setup(with: bookModel)
+        _detailHeaderView.setup(with: bookDetailViewModel.bookModel)
     }
     
     @objc func backButtonPressed() {
@@ -63,7 +59,7 @@ class BookDetailFullViewController: UIViewController {
             }
         }
         
-        bookDetailViewModel.loadComments(for: bookModel, onErrorComments: { [weak self] (error) in
+        bookDetailViewModel.loadComments(for: bookDetailViewModel.bookModel, onErrorComments: { [weak self] (error) in
             DispatchQueue.main.async {
                 self?.showAlertMessage(message: error.localizedDescription)
             }
@@ -114,10 +110,10 @@ extension BookDetailFullViewController: UITableViewDelegate {
 extension BookDetailFullViewController: DetailBookDelegate {
     
     func rentBook() {
-        guard bookModel.bookStatus == .available else {
-            showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookModel.bookStatus.bookStatusText()))
+        guard bookDetailViewModel.bookModel.bookStatus == .available else {
+            showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookDetailViewModel.bookModel.bookStatus.bookStatusText()))
             return
         }
-        bookDetailViewModel.rentBook(book: bookModel)
+        bookDetailViewModel.rentBook(book: bookDetailViewModel.bookModel)
     }
 }

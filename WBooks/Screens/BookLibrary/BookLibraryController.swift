@@ -95,7 +95,8 @@ extension BookLibraryController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = bookDetailsModel.selectBook(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailBookViewController = BookDetailFullViewController(with: book)
+        let viewModel = BookDetailFullViewModel(with: book)
+        let detailBookViewController = BookDetailFullViewController(with: viewModel)
         navigationController?.pushViewController(detailBookViewController, animated: true)
     }
 }

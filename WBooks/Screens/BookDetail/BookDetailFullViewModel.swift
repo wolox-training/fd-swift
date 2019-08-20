@@ -21,6 +21,12 @@ class BookDetailFullViewModel {
         }
     }
     
+    let bookModel: Book!
+    
+    init(with book: Book) {
+        bookModel = book
+    }
+    
     var numberOfCells: Int {
         return commentsViewModels.count
     }

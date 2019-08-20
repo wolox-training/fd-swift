@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 struct Constants {
-    static var cornerRadiusBig: CGFloat {
-        return 20
-    }
-    static var cornerRadiusSmall: CGFloat {
-        return 5
-    }
+    static let cornerRadiusBig: CGFloat = 20
+    static let cornerRadiusSmall: CGFloat = 5
 }
