@@ -11,3 +11,8 @@
 "WISHLIST" = "Lista de Deseos";
 "LIBRARY" = "Biblioteca";
 "RENTALS" = "Alquileres";
+"BOOK_DETAIL" = "Detalle de Libro";
+"AVAILABLE" = "Disponible";
+"UNAVAILABLE" = "No Disponible";
+"RENT_UNAVAILABLE" = "No se puede realizar el Alquiler";
+"BOOK_RESERVED" = "El libro ha sido Reservado";

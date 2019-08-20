@@ -10,8 +10,9 @@ import UIKit
 import WolmoCore
 
 class BookLibraryController: UIViewController {
-    var libraryItems: [Book] = []
+    
     private let _view: BooksTableView = BooksTableView.loadFromNib()!
+    
     @available(*, unavailable, message: "use init(viewModel:) instead")
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -22,7 +23,7 @@ class BookLibraryController: UIViewController {
         fatalError("init(nibName:bundle:) has not been implemented")
     }
     
-    var libraryViewModel = BookLibraryViewModel()
+    let bookLibraryViewModel = BookLibraryViewModel()
     
     init() {
         super.init(nibName: .none, bundle: .none)
@@ -41,18 +42,17 @@ class BookLibraryController: UIViewController {
         
         let search = UIBarButtonItem.searchButton
         let notifications = UIBarButtonItem.notificationsButton
-        
         navigationItem.rightBarButtonItems = [search]
         navigationItem.leftBarButtonItems = [notifications]
     }
     
     private func initLibraryTableViewModel() {
-        libraryViewModel.reloadViewClosure = { [weak self] () in
+        bookLibraryViewModel.reloadViewClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?._view.table.reloadData()
             }
         }
-    libraryViewModel.loadBooks()
+    bookLibraryViewModel.loadBooks()
     }
     
     private func configureTableView() {
@@ -72,13 +72,13 @@ extension BookLibraryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return libraryViewModel.numberOfCells
+        return bookLibraryViewModel.numberOfCellsBookLibrary
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BookCell = tableView.dequeue(cell: BookCell.self)!
-        let book = libraryViewModel.getCellBook(at: indexPath)
+        let book = bookLibraryViewModel.getCellBookLibrary(at: indexPath)
         cell.configureCell(with: book, with: cell)
         return cell
     }
@@ -88,7 +88,10 @@ extension BookLibraryController: UITableViewDataSource {
 extension BookLibraryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = bookLibraryViewModel.selectBook(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        let viewModel = BookDetailFullViewModel(with: book)
+        let detailBookViewController = BookDetailFullViewController(with: viewModel)
+        navigationController?.pushViewController(detailBookViewController, animated: true)
     }
-    
 }

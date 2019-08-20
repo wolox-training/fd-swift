@@ -1,0 +1,53 @@
+//
+//  BookDetailFullViewModel.swift
+//  WBooks
+//
+//  Created by Federico Agustin Diaz on 06/08/2019.
+//  Copyright © 2019 Wolox. All rights reserved.
+//
+
+import UIKit
+import ReactiveCocoa
+import ReactiveSwift
+import Networking
+
+import UIKit
+
+class BookDetailFullViewModel {
+    
+    private var commentsViewModels: [BookComment] = [] {
+        didSet {
+            reloadViewClosure?()
+        }
+    }
+    
+    let bookModel: Book!
+    
+    init(with book: Book) {
+        bookModel = book
+    }
+    
+    var numberOfCells: Int {
+        return commentsViewModels.count
+    }
+    
+    var reloadViewClosure: (() -> Void)?
+    
+    func getCellBookDetail(at indexPath: IndexPath) -> BookComment {
+        return commentsViewModels[indexPath.row]
+    }
+    
+    func loadComments(for bookView: Book, onErrorComments: @escaping (Error) -> Void) {
+        
+        let successComments: ([BookComment]) -> Void = { (comments) in
+            self.commentsViewModels = comments
+        }
+        
+        WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: onErrorComments)
+    }
+    
+    func rentBook(book: Book, onSuccessRent: @escaping (BookRent) -> Void, onFailureRent: @escaping (Error) -> Void) {
+        
+        WBNetworkManager.manager.rentBook(book: book, onSuccess: onSuccessRent, onError: onFailureRent)
+    }
+}

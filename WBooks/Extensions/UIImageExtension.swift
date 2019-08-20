@@ -61,4 +61,7 @@ extension UIImage {
     public static var searchIconImage: UIImage {
         return UIImage(named: "SearchIcon")!
     }
+    public static var backImage: UIImage {
+        return UIImage(named: "Back")!
+    }
 }
