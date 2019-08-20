@@ -15,43 +15,31 @@ import UIKit
 
 class BookDetailFullViewModel {
     
-    private var commentsViewModels: [BookComment] = [] {
-        didSet {
-            reloadViewClosure?()
-        }
-    }
+    private var commentsViewModels: MutableProperty<[BookComment]> = MutableProperty([])
     
     var numberOfCells: Int {
-        return commentsViewModels.count
+        return commentsViewModels.value.count
     }
     
     var reloadViewClosure: (() -> Void)?
     var showErrorAlertClosure: ((Error) -> Void)?
     var showAlertClosure: ((String) -> Void)?
     
+    let repository: WBNetworkManager
+    
+    init(bookDetailRepository: WBNetworkManager) {
+        repository = bookDetailRepository
+    }
+
     func getCellBookDetail(at indexPath: IndexPath) -> BookComment {
-        return commentsViewModels[indexPath.row]
+        return commentsViewModels.value[indexPath.row]
     }
     
-    func loadComments(for bookView: Book, onErrorComments: @escaping (Error) -> Void) {
-        
-        let successComments: ([BookComment]) -> Void = { (comments) in
-            self.commentsViewModels = comments
-        }
-        
-        WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: onErrorComments)
+    func loadComments(book: Book) -> SignalProducer<[BookComment], RepositoryError> {
+        return self.repository.getBookComments(book: book ).on(failed: { [unowned self] _ in self.commentsViewModels.value = [] }, value: { [unowned self] value in self.commentsViewModels.value = value })
     }
     
-    func rentBook(book: Book) {
-        
-        let successRent: (BookRent) -> Void = { (rent) in
-            self.showAlertClosure?("BOOK_RESERVED".localized())
-        }
-        
-        let failureRent: (Error) -> Void = { (error) in
-            self.showErrorAlertClosure?(error)
-        }
-        
-        WBNetworkManager.manager.rentBook(book: book, onSuccess: successRent, onError: failureRent)
+    func rentBook(book: Book) -> SignalProducer<Void, RepositoryError> {
+        return repository.rentBook(book: book)
     }
 }

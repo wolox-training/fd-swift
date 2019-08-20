@@ -24,7 +24,7 @@ class BookLibraryController: UIViewController {
     }
     
     var bookDetailsModel: BookLibraryViewModel = {
-        return BookLibraryViewModel()
+        return BookLibraryViewModel(bookRepository: WBNetworkManager(configuration: networkingConfiguration, defaultHeaders: WBNetworkManager.commonHeaders()))
     }()
     
     init() {

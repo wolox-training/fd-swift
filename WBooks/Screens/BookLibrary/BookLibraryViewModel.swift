@@ -7,36 +7,37 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
+import Networking
 
 class BookLibraryViewModel {
     
-    private var bookDetailsModel: [Book] = [] {
-        didSet {
-            reloadViewClosure?()
-        }
-    }
+    private var bookDetailsModel: MutableProperty<[Book]> = MutableProperty([])
     
     var numberOfCellsBookLibrary: Int {
-        return bookDetailsModel.count
+        return bookDetailsModel.value.count
     }
     
-    var reloadViewClosure: (() -> Void)?
+    let repository: WBNetworkManager
+    
+    init(bookRepository: WBNetworkManager) {
+        repository = bookRepository
+    }
     
     func getCellBookLibrary(at indexPath: IndexPath) -> Book {
-        return bookDetailsModel[indexPath.row]
+        return bookDetailsModel.value[indexPath.row]
     }
     
-    func loadBooks() {
-        let successBooks: ([Book]) -> Void = { (books) in
-            self.bookDetailsModel = books
-        }
-        WBNetworkManager.manager.fetchBooks(onSuccess: successBooks, onError: { (error) in
-            print(error)
+    func loadBooks() -> SignalProducer<[Book], RepositoryError> {
+        return self.repository.fetchBooks().on(failed: { [unowned self] _ in self.bookDetailsModel.value = [] }, value: { [unowned self] value in
+            self.bookDetailsModel = MutableProperty(value.map { Book(book: $0) })
+            //self.sortBooks(by: .id)
         })
     }
     
     func selectBook(at indexPath: IndexPath) -> Book {
-        let book = bookDetailsModel[indexPath.row]
+        let book = bookDetailsModel.value[indexPath.row]
         return book
     }
     

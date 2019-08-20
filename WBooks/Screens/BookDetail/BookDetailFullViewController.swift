@@ -15,7 +15,7 @@ class BookDetailFullViewController: UIViewController {
     private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
     
     lazy var bookDetailViewModel: BookDetailFullViewModel = {
-        return BookDetailFullViewModel()
+        return BookDetailFullViewModel(bookDetailRepository: WBNetworkManager(configuration: networkingConfiguration, defaultHeaders: WBNetworkManager.commonHeaders()))
     }()
     
     var bookModel: Book!
@@ -63,12 +63,19 @@ class BookDetailFullViewController: UIViewController {
             }
         }
         
-        bookDetailViewModel.loadComments(for: bookModel, onErrorComments: { [weak self] (error) in
-            DispatchQueue.main.async {
-                self?.showAlertMessage(message: error.localizedDescription)
+        bookDetailViewModel.loadComments() {
+            //MBProgressHUD.showAdded(to: _view, animated: true)
+            viewModel.loadComments(book: bookDetailViewModel.book).startWithResult { [unowned self] result in
+                switch result {
+                case .success:
+                    self._view.detailTable.reloadData()
+                case .failure(let error):
+                    self.showAlert(message: error.localizedDescription)
+                }
+                //MBProgressHUD.hide(for: self._view, animated: true)
             }
-        })
-    }
+        }
+        }
     
     private func configureTableView() {
         _view.detailTable.delegate = self
@@ -107,17 +114,5 @@ extension BookDetailFullViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-// MARK: - DetailBookDelegate
-extension BookDetailFullViewController: DetailBookDelegate {
-    
-    func rentBook() {
-        guard bookModel.bookStatus == .available else {
-            showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookModel.bookStatus.bookStatusText()))
-            return
-        }
-        bookDetailViewModel.rentBook(book: bookModel)
     }
 }
