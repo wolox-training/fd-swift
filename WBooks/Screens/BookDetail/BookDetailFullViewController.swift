@@ -16,9 +16,9 @@ class BookDetailFullViewController: UIViewController {
     
     private var bookDetailViewModel: BookDetailFullViewModel!
     
-    convenience init(with bookModel: BookDetailFullViewModel) {
+    convenience init(with bookDetailViewModel: BookDetailFullViewModel) {
         self.init()
-        bookDetailViewModel = bookModel
+        self.bookDetailViewModel = bookDetailViewModel
     }
     
     override func viewDidLoad() {
@@ -45,7 +45,6 @@ class BookDetailFullViewController: UIViewController {
     }
     
     override func loadView() {
-        _detailHeaderView.delegate = self
         _view.detailHeaderView.addSubview(_detailHeaderView)
         view = _view
     }
@@ -59,13 +58,16 @@ class BookDetailFullViewController: UIViewController {
             }
         }
         
-        bookDetailViewModel.loadComments(for: bookDetailViewModel.bookModel, onErrorComments: { [weak self] (error) in
-            DispatchQueue.main.async {
-                self?.showAlertMessage(message: error.localizedDescription)
+        bookDetailViewModel.loadComments(book: bookDetailViewModel.bookModel).startWithResult { [unowned self] result in
+            switch result {
+            case .success:
+                self._view.detailTable.reloadData()
+            case .failure(let error):
+                self.showAlertMessage(message: error.localizedDescription)
             }
-        })
+        }
     }
-    
+
     private func configureTableView() {
         _view.detailTable.delegate = self
         _view.detailTable.dataSource = self
@@ -94,7 +96,6 @@ extension BookDetailFullViewController: UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 // MARK: - UITableViewDelegate
@@ -113,10 +114,13 @@ extension BookDetailFullViewController: DetailBookDelegate {
             showAlertMessage(message: "RENT_UNAVAILABLE".localized(withArguments: bookDetailViewModel.bookModel.bookStatus.bookStatusText()))
             return
         }
-        bookDetailViewModel.rentBook(book: bookDetailViewModel.bookModel, onSuccessRent: { (rent) in
-            self.showAlertMessage(message: "BOOK_RESERVED".localized())
-        }, onFailureRent: { (error) in
-            self.showAlertMessage(message: error.localizedDescription)
-        })
+        bookDetailViewModel.rentBook(book: bookDetailViewModel.bookModel).startWithResult { [unowned self] result in
+            switch result {
+            case .success:
+                self._view.detailTable.reloadData()
+            case .failure(let error):
+                self.showAlertMessage(message: error.localizedDescription)
+            }
+        }
     }
 }

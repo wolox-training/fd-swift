@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import WolmoCore
+import Argo
+import Curry
+import Runes
 
 enum BookStatus: String, CaseIterable {
     case rented
@@ -29,7 +33,7 @@ enum BookStatus: String, CaseIterable {
     
 }
 
-struct Book: Codable {
+struct Book {
     
     let id: Int
     let title: String
@@ -50,5 +54,19 @@ struct Book: Codable {
         case status
         case year
         case image
+    }
+}
+
+extension Book: Argo.Decodable {
+    
+    static func decode(_ json: JSON) -> Decoded<Book> {
+        return curry(Book.init)
+            <^> json <| "id"
+            <*> json <| "title"
+            <*> json <| "author"
+            <*> json <| "status"
+            <*> json <| "genre"
+            <*> json <| "year"
+            <*> json <| "image"
     }
 }

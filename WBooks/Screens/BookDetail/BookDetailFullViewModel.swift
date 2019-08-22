@@ -15,39 +15,31 @@ import UIKit
 
 class BookDetailFullViewModel {
     
-    private var commentsViewModels: [BookComment] = [] {
-        didSet {
-            reloadViewClosure?()
-        }
-    }
+    private var commentsViewModels: MutableProperty<[BookComment]> = MutableProperty([])
     
     let bookModel: Book!
+    
+    let repository =  WBNetworkManager(configuration: networkingConfiguration, defaultHeaders: WBNetworkManager.commonHeaders())
     
     init(with book: Book) {
         bookModel = book
     }
     
     var numberOfCells: Int {
-        return commentsViewModels.count
+        return commentsViewModels.value.count
     }
     
     var reloadViewClosure: (() -> Void)?
-    
+
     func getCellBookDetail(at indexPath: IndexPath) -> BookComment {
-        return commentsViewModels[indexPath.row]
+        return commentsViewModels.value[indexPath.row]
     }
     
-    func loadComments(for bookView: Book, onErrorComments: @escaping (Error) -> Void) {
-        
-        let successComments: ([BookComment]) -> Void = { (comments) in
-            self.commentsViewModels = comments
-        }
-        
-        WBNetworkManager.manager.getBookComments(book: bookView, onSuccess: successComments, onError: onErrorComments)
+    func loadComments(book: Book) -> SignalProducer<[BookComment], RepositoryError> {
+        return self.repository.getBookComments(book: book ).on(failed: { [unowned self] _ in self.commentsViewModels.value = [] }, value: { [unowned self] value in self.commentsViewModels.value = value })
     }
     
-    func rentBook(book: Book, onSuccessRent: @escaping (BookRent) -> Void, onFailureRent: @escaping (Error) -> Void) {
-        
-        WBNetworkManager.manager.rentBook(book: book, onSuccess: onSuccessRent, onError: onFailureRent)
+    func rentBook(book: Book) -> SignalProducer<Void, RepositoryError> {
+        return repository.rentBook(book: book)
     }
 }

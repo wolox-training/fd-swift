@@ -7,20 +7,27 @@
 //
 
 import UIKit
+import Argo
+import Curry
+import Runes
 
-struct BookRent: Codable {
+struct BookRent {
     
     let id: Int
     let from: String
     let to: String
     let bookID: Int
     let userID: Int
+}
+
+extension BookRent: Argo.Decodable {
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case from
-        case to
-        case bookID
-        case userID
+    static func decode(_ json: JSON) -> Decoded<BookRent> {
+        return curry(BookRent.init)
+            <^> json <| "id"
+            <*> json <| "from"
+            <*> json <| "to"
+            <*> json <| "bookID"
+            <*> json <| "userID"
     }
 }
