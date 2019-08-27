@@ -39,6 +39,10 @@ extension UIImage {
         return UIImage(named: "AddNewActive")!
     }
     
+    public static var addNew: UIImage {
+        return UIImage(named: "AddNewImage")!
+    }
+    
     public static var rentalsImage: UIImage {
         return UIImage(named: "Rentals")!
     }
