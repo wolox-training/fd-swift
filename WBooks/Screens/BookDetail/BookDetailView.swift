@@ -62,7 +62,10 @@ class BookDetailView: UITableViewCell, NibLoadable {
             rentButton.setGreyGradient()
         }
     }
-    @IBAction func rentButton(_ sender: Any) {
-        delegate?.rentBook()
+    
+    func bindRent() {
+        rentButton.reactive.controlEvents(.touchUpInside).observeValues { _ in
+            self.delegate?.rentBook()
+        }
     }
 }

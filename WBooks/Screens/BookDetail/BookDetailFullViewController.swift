@@ -13,12 +13,11 @@ class BookDetailFullViewController: UIViewController {
     
     private let _view: BookDetailFullView = BookDetailFullView.loadFromNib()!
     private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
-    
     private var bookDetailViewModel: BookDetailFullViewModel!
     
-    convenience init(with bookDetailViewModel: BookDetailFullViewModel) {
+    convenience init(with bookDetailFullViewModel: BookDetailFullViewModel) {
         self.init()
-        self.bookDetailViewModel = bookDetailViewModel
+        bookDetailViewModel = bookDetailFullViewModel
     }
     
     override func viewDidLoad() {
@@ -30,18 +29,15 @@ class BookDetailFullViewController: UIViewController {
         
         initBookDetailTableViewModel()
         
-        let backButton = UIBarButtonItem.backButton(for: self, action: #selector(backButtonPressed))
-        navigationItem.leftBarButtonItems = [backButton]
+        _detailHeaderView.bindRent()
+        
+        let backButtonItem = UIBarButtonItem.backButton(for: self)
+        navigationItem.leftBarButtonItems = [backButtonItem]
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         _detailHeaderView.setup(with: bookDetailViewModel.bookModel)
-    }
-    
-    @objc func backButtonPressed() {
-        navigationController?.popViewController(animated: true)
     }
     
     override func loadView() {

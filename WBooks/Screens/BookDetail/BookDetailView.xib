@@ -72,9 +72,6 @@
                             <state key="normal" title="RENT">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <connections>
-                                <action selector="rentButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Uhj-gH-r4z"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

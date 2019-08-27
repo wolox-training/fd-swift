@@ -39,14 +39,8 @@ class BookLibraryController: UIViewController {
         
         title = "LIBRARY".localized()
         
-        let search = UIBarButtonItem.searchButton
-        let notifications = UIBarButtonItem.notificationsButton
-        navigationItem.rightBarButtonItems = [search]
-        navigationItem.leftBarButtonItems = [notifications]
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        navigationItem.rightBarButtonItems = [UIBarButtonItem.searchButton]
+        navigationItem.leftBarButtonItems = [UIBarButtonItem.notificationsButton]
         
         bookLibraryViewModel.loadBooks().startWithResult { [unowned self] result in
             switch result {
@@ -56,6 +50,11 @@ class BookLibraryController: UIViewController {
                 self.showAlertMessage(message: error.localizedDescription)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func configureTableView() {
