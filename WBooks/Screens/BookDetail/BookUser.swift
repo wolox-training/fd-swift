@@ -8,16 +8,23 @@
 
 import Foundation
 import UIKit
+import Argo
+import Curry
+import Runes
 
-struct BookUser: Codable {
+struct BookUser {
     
     let id: Int
     let username: String
     let imageURL: String
+}
+
+extension BookUser: Argo.Decodable {
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case username
-        case imageURL = "image"
+    static func decode(_ json: JSON) -> Decoded<BookUser> {
+        return curry(BookUser.init)
+            <^> json <| "id"
+            <*> json <| "username"
+            <*> json <| "image"
     }
 }

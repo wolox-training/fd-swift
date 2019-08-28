@@ -35,24 +35,26 @@ class BookLibraryController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initLibraryTableViewModel()
         configureTableView()
         
         title = "LIBRARY".localized()
         
-        let search = UIBarButtonItem.searchButton
-        let notifications = UIBarButtonItem.notificationsButton
-        navigationItem.rightBarButtonItems = [search]
-        navigationItem.leftBarButtonItems = [notifications]
-    }
-    
-    private func initLibraryTableViewModel() {
-        bookLibraryViewModel.reloadViewClosure = { [weak self] () in
-            DispatchQueue.main.async {
-                self?._view.table.reloadData()
+        navigationItem.rightBarButtonItems = [UIBarButtonItem.searchButton]
+        navigationItem.leftBarButtonItems = [UIBarButtonItem.notificationsButton]
+        
+        bookLibraryViewModel.loadBooks().startWithResult { [unowned self] result in
+            switch result {
+            case .success:
+                self._view.table.reloadData()
+            case .failure(let error):
+                self.showAlertMessage(message: error.localizedDescription)
             }
         }
-    bookLibraryViewModel.loadBooks()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func configureTableView() {

@@ -12,13 +12,22 @@ import UIKit
 extension UIBarButtonItem {
     
     public static var searchButton: UIBarButtonItem {
-        return UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        let searchButton  = UIButton(type: .custom)
+        searchButton.setImage(UIImage(named: "SearchIcon"), for: .normal)
+        return UIBarButtonItem(customView: searchButton)
     }
     public static var notificationsButton: UIBarButtonItem {
-        return UIBarButtonItem(image: UIImage(named: "Notifications"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        let notificationsButton  = UIButton(type: .custom)
+        notificationsButton.setImage(UIImage(named: "Notifications"), for: .normal)
+        return UIBarButtonItem(customView: notificationsButton)
     }
     
-    class func backButton(for viewController: BookDetailFullViewController, action: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: UIImage(named: "Back"), style: UIBarButtonItem.Style.plain, target: viewController, action: action)
+    class func backButton(for viewController: BookDetailFullViewController) -> UIBarButtonItem {
+        let backButton  = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "Back"), for: .normal)
+        backButton.reactive.controlEvents(.touchUpInside).observeValues { _ in
+            viewController.navigationController?.popViewController(animated: true)
+        }
+        return UIBarButtonItem(customView: backButton)
     }
 }
