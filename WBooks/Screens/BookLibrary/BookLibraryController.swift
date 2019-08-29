@@ -11,7 +11,7 @@ import WolmoCore
 
 class BookLibraryController: UIViewController {
     
-    private let _view: BooksTableView = BooksTableView.loadFromNib()!
+    let bookTableView: BooksTableView = BooksTableView.loadFromNib()!
     
     @available(*, unavailable, message: "use init(viewModel:) instead")
     required public init?(coder aDecoder: NSCoder) {
@@ -30,7 +30,7 @@ class BookLibraryController: UIViewController {
     }
     
     override public func loadView() {
-        view = _view
+        view = bookTableView
     }
     
     override func viewDidLoad() {
@@ -42,27 +42,15 @@ class BookLibraryController: UIViewController {
         navigationItem.rightBarButtonItems = [UIBarButtonItem.searchButton]
         navigationItem.leftBarButtonItems = [UIBarButtonItem.notificationsButton]
         
-        bookLibraryViewModel.loadBooks().startWithResult { [unowned self] result in
-            switch result {
-            case .success:
-                self._view.table.reloadData()
-            case .failure(let error):
-                self.showAlertMessage(message: error.localizedDescription)
-            }
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        bookLibraryViewModel.bindBooks(with: self)
     }
     
     private func configureTableView() {
-        _view.table.delegate = self
-        _view.table.dataSource = self
-        _view.table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        _view.table.register(cell: BookCell.self)
-        _view.configureLibraryTableView()
+        bookTableView.table.delegate = self
+        bookTableView.table.dataSource = self
+        bookTableView.table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        bookTableView.table.register(cell: BookCell.self)
+        bookTableView.configureLibraryTableView()
     }
 }
 
