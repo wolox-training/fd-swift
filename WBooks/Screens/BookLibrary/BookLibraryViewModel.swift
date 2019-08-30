@@ -36,4 +36,14 @@ class BookLibraryViewModel {
         return book
     }
     
+    func bindBooks(with bookLibraryController: BookLibraryController) {
+        self.loadBooks().startWithResult { [unowned bookLibraryController] result in
+            switch result {
+            case .success:
+                bookLibraryController.bookTableView.table.reloadData()
+            case .failure(let error):
+                bookLibraryController.showAlertMessage(message: error.localizedDescription)
+            }
+        }
+    }
 }

@@ -22,11 +22,11 @@ extension UIBarButtonItem {
         return UIBarButtonItem(customView: notificationsButton)
     }
     
-    class func backButton(for viewController: BookDetailFullViewController) -> UIBarButtonItem {
+    class func backButton(action: @escaping () -> Void) -> UIBarButtonItem {
         let backButton  = UIButton(type: .custom)
         backButton.setImage(UIImage(named: "Back"), for: .normal)
         backButton.reactive.controlEvents(.touchUpInside).observeValues { _ in
-            viewController.navigationController?.popViewController(animated: true)
+            action()
         }
         return UIBarButtonItem(customView: backButton)
     }
