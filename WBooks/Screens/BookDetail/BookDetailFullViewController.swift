@@ -16,14 +16,15 @@ import Networking
 class BookDetailFullViewController: UIViewController {
     
     let bookDetailFullView: BookDetailFullView = BookDetailFullView.loadFromNib()!
-    private let _detailHeaderView: BookDetailView = BookDetailView.loadFromNib()!
     private var bookDetailViewModel: BookDetailFullViewModel!
+    private var detailViewController: BookDetailViewController!
     private var commentViewController: BookCommentCellController!
     
     convenience init(with bookDetailFullViewModel: BookDetailFullViewModel) {
         self.init()
         bookDetailViewModel = bookDetailFullViewModel
         self.commentViewController = BookCommentCellController(with: bookDetailFullViewModel, with: bookDetailFullView)
+        self.detailViewController = BookDetailViewController(with: bookDetailFullViewModel)
     }
     
     override func viewDidLoad() {
@@ -31,15 +32,8 @@ class BookDetailFullViewController: UIViewController {
         
         title = "BOOK_DETAIL".localized()
         
-        _detailHeaderView.bindRent()
-        
         let backButtonItem = UIBarButtonItem.backButton(action: self.backButtonPressed)
         navigationItem.leftBarButtonItems = [backButtonItem]
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        _detailHeaderView.setup(with: bookDetailViewModel.bookModel)
     }
     
     @objc func backButtonPressed() {
@@ -47,7 +41,7 @@ class BookDetailFullViewController: UIViewController {
     }
     
     override func loadView() {
-        bookDetailFullView.detailHeaderView.addSubview(_detailHeaderView)
+        bookDetailFullView.detailHeaderView.addSubview(detailViewController.view)
         bookDetailFullView.detailTable.addSubview(commentViewController.view)
         view = bookDetailFullView
     }

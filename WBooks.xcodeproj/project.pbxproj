@@ -30,6 +30,7 @@
 		B83388D921E93AAC00085E26 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83388D121E93AAC00085E26 /* Runes.framework */; };
 		CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB934DC1D21992100DF75C2 /* Environment.swift */; };
 		CED934891E8466A60017CF96 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED934871E8466A60017CF96 /* ReactiveSwift.framework */; };
+		D42F3869231969000079EC8A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F3868231969000079EC8A /* BookDetailViewController.swift */; };
 		D46C8D6022F1D176009F50DC /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D5F22F1D176009F50DC /* NavBarController.swift */; };
 		D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D6122F1D50B009F50DC /* TabBarController.swift */; };
 		D46C8DA022F20683009F50DC /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D8E22F20683009F50DC /* AddNewController.swift */; };
@@ -145,6 +146,7 @@
 		CED934861E8466A60017CF96 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = Carthage/Build/iOS/Core.framework; sourceTree = "<group>"; };
 		CED934871E8466A60017CF96 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CED9348A1E8466CE0017CF96 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		D42F3868231969000079EC8A /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		D46C8D5F22F1D176009F50DC /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		D46C8D6122F1D50B009F50DC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D46C8D8E22F20683009F50DC /* AddNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
@@ -447,8 +449,10 @@
 			children = (
 				D47767AC230192CF0051298E /* BookCommentCellView.swift */,
 				D47767A9230192CF0051298E /* BookCommentCellView.xib */,
+				D46FD23B2315AA2F00118C41 /* BookCommentCellController.swift */,
 				D47767AB230192CF0051298E /* BookDetailView.swift */,
 				D47767AA230192CF0051298E /* BookDetailView.xib */,
+				D42F3868231969000079EC8A /* BookDetailViewController.swift */,
 				D48280A122F8BCE900A0BCDE /* BookRent.swift */,
 				D47566AE22F9F27D008671FD /* BookDetailFullView.swift */,
 				D47566B022F9F2A6008671FD /* BookDetailFullView.xib */,
@@ -456,7 +460,6 @@
 				D47566B422F9F9DC008671FD /* BookDetailFullViewModel.swift */,
 				D47566B622F9FFC1008671FD /* BookComment.swift */,
 				D48E14AF22FDB2A900CBAAED /* BookUser.swift */,
-				D46FD23B2315AA2F00118C41 /* BookCommentCellController.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */,
 				D46C8DA122F20683009F50DC /* AddNewView.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
+				D42F3869231969000079EC8A /* BookDetailViewController.swift in Sources */,
 				D47566B722F9FFC1008671FD /* BookComment.swift in Sources */,
 				D477ACD622F3627400B9997B /* BookLibraryViewModel.swift in Sources */,
 				D46C8DA222F20683009F50DC /* Book.swift in Sources */,
