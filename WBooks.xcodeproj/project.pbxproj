@@ -30,10 +30,13 @@
 		B83388D921E93AAC00085E26 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83388D121E93AAC00085E26 /* Runes.framework */; };
 		CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB934DC1D21992100DF75C2 /* Environment.swift */; };
 		CED934891E8466A60017CF96 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED934871E8466A60017CF96 /* ReactiveSwift.framework */; };
+		D43407C9231847110073C583 /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43407C5231847100073C583 /* AddNewController.swift */; };
+		D43407CA231847110073C583 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43407C6231847100073C583 /* AddNewView.swift */; };
+		D43407CB231847110073C583 /* AddNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43407C7231847100073C583 /* AddNewView.xib */; };
+		D43407CC231847110073C583 /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43407C8231847100073C583 /* AddNewViewModel.swift */; };
+		D43407CE231847F10073C583 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43407CD231847F10073C583 /* UITextFieldExtension.swift */; };
 		D46C8D6022F1D176009F50DC /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D5F22F1D176009F50DC /* NavBarController.swift */; };
 		D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D6122F1D50B009F50DC /* TabBarController.swift */; };
-		D46C8DA022F20683009F50DC /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D8E22F20683009F50DC /* AddNewController.swift */; };
-		D46C8DA122F20683009F50DC /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D8F22F20683009F50DC /* AddNewView.swift */; };
 		D46C8DA222F20683009F50DC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9022F20683009F50DC /* Book.swift */; };
 		D46C8DA322F20683009F50DC /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9122F20683009F50DC /* BookCell.swift */; };
 		D46C8DA422F20683009F50DC /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8D9222F20683009F50DC /* BookCell.xib */; };
@@ -47,7 +50,6 @@
 		D46C8DAC22F20683009F50DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9C22F20683009F50DC /* SettingsView.swift */; };
 		D46C8DAD22F20683009F50DC /* WishlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9E22F20683009F50DC /* WishlistController.swift */; };
 		D46C8DAE22F20683009F50DC /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C8D9F22F20683009F50DC /* WishlistView.swift */; };
-		D46C8DB022F2074C009F50DC /* AddNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DAF22F2074C009F50DC /* AddNewView.xib */; };
 		D46C8DB222F2076C009F50DC /* RentalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB122F2076C009F50DC /* RentalsView.xib */; };
 		D46C8DB422F2077D009F50DC /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB322F2077D009F50DC /* SettingsView.xib */; };
 		D46C8DB622F207B7009F50DC /* WishlistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C8DB522F207B7009F50DC /* WishlistView.xib */; };
@@ -145,10 +147,13 @@
 		CED934861E8466A60017CF96 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = Carthage/Build/iOS/Core.framework; sourceTree = "<group>"; };
 		CED934871E8466A60017CF96 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CED9348A1E8466CE0017CF96 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		D43407C5231847100073C583 /* AddNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
+		D43407C6231847100073C583 /* AddNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		D43407C7231847100073C583 /* AddNewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewView.xib; sourceTree = "<group>"; };
+		D43407C8231847100073C583 /* AddNewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewModel.swift; sourceTree = "<group>"; };
+		D43407CD231847F10073C583 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D46C8D5F22F1D176009F50DC /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		D46C8D6122F1D50B009F50DC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		D46C8D8E22F20683009F50DC /* AddNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
-		D46C8D8F22F20683009F50DC /* AddNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		D46C8D9022F20683009F50DC /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D46C8D9122F20683009F50DC /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		D46C8D9222F20683009F50DC /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
@@ -162,7 +167,6 @@
 		D46C8D9C22F20683009F50DC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D46C8D9E22F20683009F50DC /* WishlistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistController.swift; sourceTree = "<group>"; };
 		D46C8D9F22F20683009F50DC /* WishlistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
-		D46C8DAF22F2074C009F50DC /* AddNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewView.xib; sourceTree = "<group>"; };
 		D46C8DB122F2076C009F50DC /* RentalsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalsView.xib; sourceTree = "<group>"; };
 		D46C8DB322F2077D009F50DC /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		D46C8DB522F207B7009F50DC /* WishlistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistView.xib; sourceTree = "<group>"; };
@@ -340,6 +344,17 @@
 			path = ConfigurationFiles;
 			sourceTree = "<group>";
 		};
+		D43407C4231847100073C583 /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				D43407C5231847100073C583 /* AddNewController.swift */,
+				D43407C6231847100073C583 /* AddNewView.swift */,
+				D43407C7231847100073C583 /* AddNewView.xib */,
+				D43407C8231847100073C583 /* AddNewViewModel.swift */,
+			);
+			path = AddNew;
+			sourceTree = "<group>";
+		};
 		D46C8D6322F1E1EC009F50DC /* BarControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,16 +377,6 @@
 				D46C8D9622F20683009F50DC /* BooksTableView.xib */,
 			);
 			path = BookLibrary;
-			sourceTree = "<group>";
-		};
-		D46C8D8D22F20683009F50DC /* AddNew */ = {
-			isa = PBXGroup;
-			children = (
-				D46C8D8E22F20683009F50DC /* AddNewController.swift */,
-				D46C8D8F22F20683009F50DC /* AddNewView.swift */,
-				D46C8DAF22F2074C009F50DC /* AddNewView.xib */,
-			);
-			path = AddNew;
 			sourceTree = "<group>";
 		};
 		D46C8D9722F20683009F50DC /* Rentals */ = {
@@ -407,9 +412,9 @@
 		D46C8DB922F214ED009F50DC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D43407C4231847100073C583 /* AddNew */,
 				D482809C22F8B75100A0BCDE /* BookDetail */,
 				D47646B122E8B25100BF86EE /* Introduction */,
-				D46C8D8D22F20683009F50DC /* AddNew */,
 				D46C8D9722F20683009F50DC /* Rentals */,
 				D46C8D9A22F20683009F50DC /* Settings */,
 				D46C8D9D22F20683009F50DC /* Wishlist */,
@@ -438,6 +443,7 @@
 				D4741AA922FC952000DF15EA /* UIImageViewExtension.swift */,
 				D47767B12301B7E10051298E /* UIButtonExtension.swift */,
 				D479EE302305AB9C003C173F /* UIDateExtension.swift */,
+				D43407CD231847F10073C583 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -589,7 +595,7 @@
 				D47767AE230192CF0051298E /* BookDetailView.xib in Resources */,
 				D46C8DBA22F21968009F50DC /* Localizable.strings in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
-				D46C8DB022F2074C009F50DC /* AddNewView.xib in Resources */,
+				D43407CB231847110073C583 /* AddNewView.xib in Resources */,
 				D46C8DA422F20683009F50DC /* BookCell.xib in Resources */,
 				D46C8DB422F2077D009F50DC /* SettingsView.xib in Resources */,
 				D47767AD230192CF0051298E /* BookCommentCellView.xib in Resources */,
@@ -672,10 +678,10 @@
 				D47767B22301B7E10051298E /* UIButtonExtension.swift in Sources */,
 				D47767B0230192CF0051298E /* BookCommentCellView.swift in Sources */,
 				D46C8DA622F20683009F50DC /* BookLibraryController.swift in Sources */,
+				D43407CE231847F10073C583 /* UITextFieldExtension.swift in Sources */,
 				D46C8DA322F20683009F50DC /* BookCell.swift in Sources */,
 				D46C8DA522F20683009F50DC /* BookInfo.swift in Sources */,
 				D46C8D6222F1D50B009F50DC /* TabBarController.swift in Sources */,
-				D46C8DA122F20683009F50DC /* AddNewView.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
 				D47566B722F9FFC1008671FD /* BookComment.swift in Sources */,
 				D477ACD622F3627400B9997B /* BookLibraryViewModel.swift in Sources */,
@@ -687,17 +693,19 @@
 				D46FD23C2315AA2F00118C41 /* BookCommentCellController.swift in Sources */,
 				E1530D9C1ED37905002A9002 /* RollbarService.swift in Sources */,
 				D46C8D6022F1D176009F50DC /* NavBarController.swift in Sources */,
+				D43407C9231847110073C583 /* AddNewController.swift in Sources */,
 				D47566B922FA0C18008671FD /* UIViewControllerExtension.swift in Sources */,
 				D47566B522F9F9DC008671FD /* BookDetailFullViewModel.swift in Sources */,
 				D47646B322E8B27900BF86EE /* InitalScreenView.swift in Sources */,
 				D48280A222F8BCE900A0BCDE /* BookRent.swift in Sources */,
-				D46C8DA022F20683009F50DC /* AddNewController.swift in Sources */,
 				D477ACCF22F332FD00B9997B /* UIImageExtension.swift in Sources */,
 				D46C8DAD22F20683009F50DC /* WishlistController.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				D476750D22F0C7A10097D8B9 /* UIColorExtension.swift in Sources */,
 				D4741AAA22FC952000DF15EA /* UIImageViewExtension.swift in Sources */,
 				D46C8DA722F20683009F50DC /* BooksTableView.swift in Sources */,
+				D43407CA231847110073C583 /* AddNewView.swift in Sources */,
+				D43407CC231847110073C583 /* AddNewViewModel.swift in Sources */,
 				D47767AF230192CF0051298E /* BookDetailView.swift in Sources */,
 				D46C8DA922F20683009F50DC /* RentalsController.swift in Sources */,
 				D4738ED923047918009E8F38 /* Constants.swift in Sources */,

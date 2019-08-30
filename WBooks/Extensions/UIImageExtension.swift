@@ -64,4 +64,7 @@ extension UIImage {
     public static var backImage: UIImage {
         return UIImage(named: "Back")!
     }
+    public static var addNew: UIImage {
+        return UIImage(named: "AddNewImageBook")!
+    }
 }

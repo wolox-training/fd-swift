@@ -16,3 +16,9 @@
 "UNAVAILABLE" = "Not Available";
 "RENT_UNAVAILABLE" = "The Rent is Unavaiable";
 "BOOK_RESERVED" = "The Book has been Reserved";
+"SUBMIT" = "SUBMIT";
+"BOOK_NAME" = "Book's Name";
+"BOOK_AUTHOR" = "Author";
+"BOOK_YEAR" = "Year";
+"BOOK_TOPIC" = "Topic";
+"BOOK_DESCRIPTION" = "Description";

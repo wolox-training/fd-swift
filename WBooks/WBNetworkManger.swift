@@ -53,6 +53,20 @@ class WBNetworkManager: AbstractRepository {
         }
     }
     
+    public func addBook(book: Book) -> SignalProducer<Book, RepositoryError> {
+        let path = "books"
+        let params: [String: Any] = ["title": book.title,
+                                     "author": book.author,
+                                     "status": book.status,
+                                     "genre": book.genre,
+                                     "year": book.year,
+                                     "image": book.image]
+        
+        return performRequest(method: .post, path: path, parameters: params) { JSON in
+            return decode(JSON).toResult()
+        }
+    }
+    
     class func commonHeaders() -> [String: String] {
         return ["Content-Type": "application/json",
                 "Accept": "application/json"]
